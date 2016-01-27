@@ -15,6 +15,36 @@
       = f.text_field :phone_number, class: 'form-control', required: true
     = f.error_span(:phone_number)
   .form-group
+    = f.label :country, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :country, class: 'form-control', required: true
+    = f.error_span(:country)
+  .form-group
+    = f.label :city, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :city, class: 'form-control', required: true
+    = f.error_span(:city)
+  .form-group
+    = f.label :has_car, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :has_car, class: 'form-control', required: true
+    = f.error_span(:has_car)
+  .form-group
+    = f.label :family_unit, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :family_unit, class: 'form-control', required: true
+    = f.error_span(:family_unit)
+  .form-group
+    = f.label :arrival_date, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :arrival_date, class: 'form-control', required: true
+    = f.error_span(:arrival_date)
+  .form-group
+    = f.label :departure_date, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :departure_date, class: 'form-control', required: true
+    = f.error_span(:departure_date)
+  .form-group
     .col-lg-offset-2.col-lg-10
       = f.submit nil,class: 'btn btn-primary'
       = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn btn-default'

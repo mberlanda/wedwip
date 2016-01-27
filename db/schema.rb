@@ -15,10 +15,16 @@ ActiveRecord::Schema.define(version: 20160127183936) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.text     "email"
-    t.text     "phone_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "country"
+    t.string   "city"
+    t.boolean  "has_car"
+    t.integer  "family_unit"
+    t.date     "arrival_date"
+    t.date     "departure_date"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

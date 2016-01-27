@@ -8,6 +8,12 @@
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:email)
       %th= model_class.human_attribute_name(:phone_number)
+      %th= model_class.human_attribute_name(:country)
+      %th= model_class.human_attribute_name(:city)
+      %th= model_class.human_attribute_name(:has_car)
+      %th= model_class.human_attribute_name(:family_unit)
+      %th= model_class.human_attribute_name(:arrival_date)
+      %th= model_class.human_attribute_name(:departure_date)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -17,6 +23,12 @@
         %td= user.name
         %td= user.email
         %td= user.phone_number
+        %td= user.country
+        %td= user.city
+        %td= user.has_car
+        %td= user.family_unit
+        %td= user.arrival_date
+        %td= user.departure_date
         %td=l user.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_user_path(user), :class => 'btn btn-default btn-xs'
