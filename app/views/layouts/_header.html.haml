@@ -1,0 +1,24 @@
+%header.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      = link_to "WedWip", "#{root_path}", id: "logo", class: "navbar-brand"
+    %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li= link_to "Home", root_path
+        %li= link_to "Help", help_path
+        %li.dropdown
+          %a#themes.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Themes
+            %span.caret
+          %ul.dropdown-menu{"aria-labelledby" => "themes"}
+            %li= link_to "Home", root_path
+            %li.divider
+            %li= link_to "Home", root_path
+      %ul.nav.navbar-nav.navbar-right
+        %li= link_to "Home", root_path
+        %li.divider
+        %li= link_to "Home", root_path
