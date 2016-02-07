@@ -1,8 +1,12 @@
 - provide(:title, "Home")
-.center.jumbotron
-  %h1 Welcome to WedWip App
-  %h4
-    This is the home page for the WedWip App. It is designed to help people to organize their wedding.
+.jumbotron
+  .container
+    .row
+      %h1 Welcome to WedWip App  
+      %p  This is the home page for the WedWip App. It is designed to help people to organize their wedding.
+    .row
+      %p
+        %a.btn.btn-primary.btn-lg Learn More
 
 - #  = link_to "Sign up now!", "#{signup_path}", class: "btn btn-lg btn-primary" 
 

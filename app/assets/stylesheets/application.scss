@@ -16,3 +16,8 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body{
+  background-image: url("/assets/bea.jpg");
+  background-size: 100%;
+  };

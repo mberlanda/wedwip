@@ -1,4 +1,4 @@
-%header.navbar.navbar-default.navbar-fixed-top
+%nav.navbar.navbar-inverse
   .container
     .navbar-header
       = link_to "WedWip", "#{root_path}", id: "logo", class: "navbar-brand"
@@ -9,7 +9,7 @@
     #navbar-main.navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li= link_to "Home", root_path
-        %li= link_to "Help", help_path
+        %li= link_to "Help", help_static_pages_path
         %li.dropdown
           %a#themes.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
             Themes
