@@ -33,5 +33,11 @@ RSpec.describe User, type: :model do
     expect(@user).to be_valid    
   end
 
+  it "should adjust the format of the name and the email" do
+    usr1 = User.new(name: "exAMPLe USeR", email: "uSER@EXAMple.coM", phone_number: "0000")
+    usr1.save!
+    expect(@user.name).to eq("Example User")
+    expect(@user.email).to eq("user@example.com")
+  end
 
 end
