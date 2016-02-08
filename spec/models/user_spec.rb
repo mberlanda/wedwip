@@ -14,4 +14,24 @@ RSpec.describe User, type: :model do
     expect(@user).to_not be_valid
   end
 
+  it "should contain a valid email" do
+    @user.email = nil
+    expect(@user).to_not be_valid
+
+    @user.email = "user@name"
+    expect(@user).to_not be_valid
+
+    @user.email = "foo@bar.com"
+    expect(@user).to be_valid    
+  end
+
+  it "should contain a valid phone_number" do
+    @user.phone_number = "0000a"
+    expect(@user).to_not be_valid
+
+    @user.phone_number = "0000"
+    expect(@user).to be_valid    
+  end
+
+
 end
