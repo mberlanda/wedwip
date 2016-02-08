@@ -1,2 +1,18 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+-  provide(:title, @user.name)
+
+
+.jumbotron
+  %h1 Sign Up
+  .row
+    .col-md-6.col-md-offset-3
+      = simple_form_for @user do |f|
+        .form-body
+          .form-group
+            = f.input :name, label: "Nome"
+            = f.input :email, label: "Email"
+            = f.input :phone_number, label: "Telefono"
+            = f.input :password, label: "Password"
+            = f.input :password_confirmation, label: "Conferma Password"
+            = f.button :submit, html_input: {class: "btn btn-primary"}
+            
+            

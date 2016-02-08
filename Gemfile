@@ -14,6 +14,7 @@ gem 'therubyracer', platforms: :ruby # See https://github.com/rails/execjs#readm
 
 gem 'haml'
 gem 'haml-rails'
+gem 'simple_form'
 
 gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
