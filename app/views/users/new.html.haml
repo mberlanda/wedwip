@@ -1,18 +1,24 @@
 -  provide(:title, @user.name)
 
-
 .jumbotron
-  %h1 Sign Up
-  .row
-    .col-md-6.col-md-offset-3
-      = simple_form_for @user do |f|
-        .form-body
-          .form-group
-            = f.input :name, label: "Nome"
-            = f.input :email, label: "Email"
-            = f.input :phone_number, label: "Telefono"
-            = f.input :password, label: "Password"
-            = f.input :password_confirmation, label: "Conferma Password"
-            = f.button :submit, html_input: {class: "btn btn-primary"}
-            
-            
+  .page-header.clearfix
+    .pull-left
+      %h2 Registrati
+    .pull-right
+      .btn-group
+        = link_to 'Back', "#", class: "btn btn-primary disabled"
+        = link_to 'Show', "#", class: "btn btn-primary success"
+  %hr
+
+  = simple_form_for @user, html: { class: 'form-horizontal' }, wrapper: :horizontal_input_group, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean } do |f|
+
+    = f.error_notification
+    .form-inputs
+      = f.input :name, label: "Nome", class: "form-control"
+      = f.input :email, label: "Email", class: "form-control"
+      = f.input :phone_number, label: "Telefono", class: "form-control"
+      = f.input :password, label: "Password", class: "form-control"
+      = f.input :password_confirmation, label: "Conferma Password", class: "form-control"
+      %hr
+    .form-actions
+      = f.button :submit, class: "btn btn-primary"
