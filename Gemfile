@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'unicorn' # Use Unicorn as the app server
+gem 'puma' # Use Puma as the app server
 gem 'rails', '4.2.5' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 
@@ -34,7 +34,6 @@ group :development, :test do
   gem 'sqlite3' # Use sqlite3 as the database for Active Record
   gem 'byebug'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.0'
-  gem 'thin'
 end
 
 group :development do
