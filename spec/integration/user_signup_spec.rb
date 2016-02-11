@@ -25,7 +25,14 @@ describe UsersController do
                              password_confirmation: "foobar",
                              validation_code: User::VALIDATION_CODE }
     expect(User.count).to eq(count_before + 1)
+    expect(is_logged_in?).to eq true
+
   end
 
+  private
+
+      def is_logged_in?
+        !session[:user_id].nil?
+      end
 
 end
