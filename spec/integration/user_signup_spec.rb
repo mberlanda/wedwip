@@ -10,7 +10,8 @@ describe UsersController do
                              email: "user@invalid",
                              phone_number: "3333a",
                              password:              "foo",
-                             password_confirmation: "bar" }
+                             password_confirmation: "bar",
+                             validation_code: '' }
     expect(User.count).to eq(count_before)
   end
 
@@ -21,7 +22,8 @@ describe UsersController do
                              email: "user@valid.info",
                              phone_number: "3333",
                              password:              "foobar",
-                             password_confirmation: "foobar" }
+                             password_confirmation: "foobar",
+                             validation_code: User::VALIDATION_CODE }
     expect(User.count).to eq(count_before + 1)
   end
 

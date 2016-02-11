@@ -1,6 +1,6 @@
 -  provide(:title, @user.name)
 
-.jumbotron
+.jumbotron.col-md-6.col-md-offset-3
   .page-header.clearfix
     .pull-left
       %h2 Registrati
@@ -19,6 +19,7 @@
       = f.input :phone_number, label: "Telefono", class: "form-control"
       = f.input :password, label: "Password", class: "form-control"
       = f.input :password_confirmation, label: "Conferma Password", class: "form-control"
+      = f.input :validation_code, label: "Validation Code", class: "form-control"
       %hr
     .form-actions
       = f.button :submit, class: "btn btn-primary"

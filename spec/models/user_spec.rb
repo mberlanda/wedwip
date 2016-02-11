@@ -57,7 +57,8 @@ private
   def new_user(options={})
     user_params = { name: "Example User", email: "user@example.com",
                phone_number: "0000", password: "foobar", 
-               password_confirmation: "foobar"}.merge(options)
+               password_confirmation: "foobar", 
+               validation_code: User::VALIDATION_CODE}.merge(options)
     User.new(user_params)
   end
 end

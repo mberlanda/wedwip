@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :name, :email, :phone_number
+  attr_accessor :name, :email, :phone_number, :validation_code
 
   before_save { self.email = email.downcase,
                 self.name = name.split.map(&:capitalize)*' ' }
@@ -14,5 +14,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  VALIDATION_CODE = "beamauro2016"
+  validates :validation_code, presence: true, inclusion: {:in => [VALIDATION_CODE]}
+
 
 end
