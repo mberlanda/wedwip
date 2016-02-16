@@ -16,3 +16,5 @@
 //= require jquery
 //= require i18n
 //= require bootstrap-sprockets
+//= require plugins/page/jquery.backstretch
+//= require layout/bg
