@@ -3,6 +3,7 @@ ruby '2.2.1'
 
 gem 'rails', '4.2.5' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'puma' # Use Puma as the app server
+gem 'pg'
 gem 'rails_12factor', group: :production
 
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
@@ -22,16 +23,11 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 
 gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :production do
-  gem 'pg'
-end
 
 group :development, :test do
 
-  gem 'sqlite3' # Use sqlite3 as the database for Active Record
   gem 'byebug'  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rspec-rails', '~> 3.0'
 end

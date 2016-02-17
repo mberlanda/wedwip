@@ -1,9 +1,8 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :name, :email, :phone_number, :validation_code, :remember_token
+  attr_accessor :validation_code, :remember_token
 
-  before_save { self.email = email.downcase,
-                self.name = name.split.map(&:capitalize)*' ' }
+  before_save :normalize_fields
   
   validates :name, presence: true, allow_blank: false
   validates :phone_number, format: { with: /\A\d*\z/ }
@@ -32,6 +31,11 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
   
+  def normalize_fields
+    self.email = email.downcase
+    self.name = name.split.map(&:capitalize)*' '
+  end
+
   class << self
     def digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
