@@ -1,15 +1,23 @@
 !!!
-%html
+/ [if IE 8] <html lang="it" class="ie8 no-js">
+/ [if IE 9] <html lang="it" class="ie9 no-js">
+<!--[if !IE]><!-->
+%html{lang:"it"}
+  <!--<![endif]-->
   %head
-    = stylesheet_link_tag    'application', media: 'all' #, 'data-turbolinks-track' => true
-    = javascript_include_tag 'application' #, 'data-turbolinks-track' => true
+    
+    %meta{charset:"utf-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=no", name: "viewport"}/
+    %meta{content:"", name:"description"}/
+    %meta{content:"", name:"author"}/
+    %title WedWip
+    = render partial: 'layouts/stylesheets'
     = csrf_meta_tags
-    = render 'layouts/shim'
-  %body
-    = render 'layouts/header'  
-    .container
-      - flash.each do |message_type, message|
-        %div{class: "alert alert-#{message_type}"}= message
-      = yield
-      - #= render 'layouts/footer'
-      = debug(params) if Rails.env.development?
+
+  / Alternate Body Classes: .modern and .vintage
+  %body.vintage#page-top
+    / Navigation
+    = render partial: 'layouts/navigation'
+
+    = yield
+    = render partial: 'layouts/javascripts'

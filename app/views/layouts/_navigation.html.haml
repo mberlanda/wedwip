@@ -1,0 +1,31 @@
+/ Note: navbar-default and navbar-inverse are both supported with this theme.
+%nav.navbar.navbar-inverse.navbar-fixed-top.navbar-expanded
+  .container
+    
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{ type: "button", "data-toggle" => "collapse", "data-target" => "#bs-example-navbar-collapse-1" }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand.page-scroll{ href: "#page-top" }
+        %img.img-responsive{ alt: "", src: asset_path("img/fashion/logo.png")}
+    
+    / Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse#bs-example-navbar-collapse-1
+      %ul.nav.navbar-nav.navbar-right
+        %li.hidden
+          %a.page-scroll{ href: "#page-top" }
+        %li
+          %a.page-scroll{ href: "#about" } About
+        %li
+          %a.page-scroll{ href: "#process" } Process
+        %li
+          %a.page-scroll{ href: "#collection" } Collection
+        %li
+          %a.page-scroll{ href: "#locations" } Locations
+        %li
+          %a.page-scroll{ href: "#testimonials" } Testimonials
+        %li
+          %a.page-scroll{ href: "#contacts" } Contacts
