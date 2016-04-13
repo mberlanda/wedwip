@@ -4,6 +4,7 @@ require 'spec_helper'
 describe UsersController do
   
   it "should not create users with invalid signup information" do
+    pending
     get users_path
     count_before = User.count
     post users_path, user: { name:  "",
@@ -16,6 +17,7 @@ describe UsersController do
   end
 
   it "should create users with valid signup information" do
+    pending
     get users_path
     count_before = User.count
     post users_path, user: { name:  "Pinco Pallino",
