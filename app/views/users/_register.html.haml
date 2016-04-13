@@ -1,0 +1,40 @@
+%section#register.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2 Registrati
+        %hr.colored/
+        %p Inserisci alcune informazioni per accedere al sito.
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        = simple_form_for @user, html: { id: :registerForm, name: :registerForm } do |f|
+          = f.error_notification
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :name, label: "Nome", placeholder: "es. Nome Cognome", input_html:{"data-validation-required-message" => "Please enter your name.", :required => "", :type => "text", id: :name , class: "form-control"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :email, label: "Email Address", placeholder: "es. Email Address", input_html:{"data-validation-required-message" => "Please enter your email address.", :required => "", :type => "email", id: :email , class: "form-control"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :phone_number, label: "Telefono", placeholder: "es. 390000000000", input_html:{"data-validation-required-message" => "Please enter your phone number..", :required => "", :type => "tel", id: :phone_number , class: "form-control"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :password, label: "Password", placeholder: "es. Password", input_html:{"data-validation-required-message" => "Please enter your password.", :required => "", :type => "password", id: :password , class: "form-control"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :password_confirmation, label: "Conferma Password", placeholder: "es. Conferma Password", input_html:{"data-validation-required-message" => "Please enter your password.", :required => "", :type => "password", id: :password_confirmation , class: "form-control"}
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              = f.input :validation_code, label: "Codice di Verifica", placeholder: "es. Codice di Verifica", input_html:{"data-validation-required-message" => "Please enter a valid validation code.", :required => "", :type => "text", id: :validation_code , class: "form-control"}
+              %p.help-block.text-danger
+          %br/
+          #success
+          .row
+            .form-group.col-xs-12
+              = f.button :submit, class: "btn btn-outline-dark"
