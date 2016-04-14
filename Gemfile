@@ -7,9 +7,9 @@ gem 'pg'
 gem 'rails_12factor', group: :production
 
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
+# gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 
-gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
+# gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'therubyracer', platforms: :ruby # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem "font-awesome-rails"
@@ -18,7 +18,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 
-gem 'jquery-rails' # Use jquery as the JavaScript library
+# gem 'jquery-rails' # Use jquery as the JavaScript library
 # gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
