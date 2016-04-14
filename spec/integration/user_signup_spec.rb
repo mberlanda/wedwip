@@ -7,7 +7,7 @@ describe UsersController do
 
     get new_user_path
     count_before = User.count
-    post new_user_path, user: { name:  "",
+    post users_path, user: { name:  "",
                              email: "user@invalid",
                              phone_number: "3333a",
                              password:              "foo",
@@ -20,7 +20,7 @@ describe UsersController do
 
     get new_user_path
     count_before = User.count
-    post new_user_path, user: { name:  "Pinco Pallino",
+    post users_path, user: { name:  "Pinco Pallino",
                              email: "user@valid.info",
                              phone_number: "3333",
                              password:              "foobar",

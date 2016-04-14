@@ -2,7 +2,14 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :users
+  resources :users do
+    collection do
+      get :edit
+      get :index
+      get :show
+    end
+  end
+
 
   resources :static_pages do
     collection do
