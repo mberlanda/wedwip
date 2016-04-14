@@ -9,7 +9,7 @@ gem 'rails_12factor', group: :production
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
 # gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 
-# gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 # gem 'bootstrap-sass', '~> 3.3.6'
 gem 'therubyracer', platforms: :ruby # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem "font-awesome-rails"

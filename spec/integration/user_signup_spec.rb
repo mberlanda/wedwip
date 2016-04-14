@@ -4,10 +4,10 @@ require 'spec_helper'
 describe UsersController do
   
   it "should not create users with invalid signup information" do
-    pending
-    get users_path
+
+    get new_user_path
     count_before = User.count
-    post users_path, user: { name:  "",
+    post new_user_path, user: { name:  "",
                              email: "user@invalid",
                              phone_number: "3333a",
                              password:              "foo",
@@ -17,10 +17,10 @@ describe UsersController do
   end
 
   it "should create users with valid signup information" do
-    pending
-    get users_path
+
+    get new_user_path
     count_before = User.count
-    post users_path, user: { name:  "Pinco Pallino",
+    post new_user_path, user: { name:  "Pinco Pallino",
                              email: "user@valid.info",
                              phone_number: "3333",
                              password:              "foobar",
@@ -33,8 +33,7 @@ describe UsersController do
 
   private
 
-      def is_logged_in?
-        !session[:user_id].nil?
-      end
-
+    def is_logged_in?
+      !session[:user_id].nil?
+    end
 end
