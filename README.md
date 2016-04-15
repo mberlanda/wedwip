@@ -57,3 +57,8 @@ Some setup you must do manually if you haven't yet:
 
 rails generate devise MODEL
 ```
+
+### Add CloudMailIn to Heroku to send emails
+```
+https://elements.heroku.com/addons/cloudmailin
+```
