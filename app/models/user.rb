@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+=begin
   attr_accessor :validation_code, :remember_token
 
   before_save :normalize_fields
@@ -46,4 +47,5 @@ class User < ActiveRecord::Base
       SecureRandom.urlsafe_base64
     end
   end
+=end
 end
