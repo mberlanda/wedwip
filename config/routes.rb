@@ -2,27 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'static_pages#home'
-
-  resources :users do
-    collection do
-      get :edit
-      get :index
-      get :show
-    end
-  end
-
-
-  resources :static_pages do
-    collection do
-      get :help
-    end
-  end
-
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-
-  
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

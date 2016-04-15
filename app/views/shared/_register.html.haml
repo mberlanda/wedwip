@@ -7,7 +7,7 @@
         %p Inserisci alcune informazioni per accedere al sito.
     .row.content-row
       .col-lg-8.col-lg-offset-2
-        = simple_form_for @user, html: { id: :registerForm, name: :registerForm } do |f|
+        = simple_form_for (resource, as: resource_name, url: registration_path(resource_name), html: { id: :registerForm, name: :registerForm }) do |f|
           = f.error_notification
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls

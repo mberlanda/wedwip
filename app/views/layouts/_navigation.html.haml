@@ -13,19 +13,21 @@
         %img.img-responsive{ alt: "", src: asset_path("img/fashion/logo.png")}
     
     / Collect the nav links, forms, and other content for toggling
-    .collapse.navbar-collapse#bs-example-navbar-collapse-1
-      %ul.nav.navbar-nav.navbar-right
-        %li.hidden
-          %a.page-scroll{ href: "#page-top" }
-        %li
-          %a.page-scroll{ href: "#about" } About
-        %li
-          %a.page-scroll{ href: "#process" } Process
-        %li
-          %a.page-scroll{ href: "#collection" } Collection
-        %li
-          %a.page-scroll{ href: "#locations" } Locations
-        %li
-          %a.page-scroll{ href: "#testimonials" } Testimonials
-        %li
-          %a.page-scroll{ href: "#contact" } Contact
+    - if user_signed_in?
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        %ul.nav.navbar-nav.navbar-right
+
+          %li.hidden
+            %a.page-scroll{ href: "#page-top" }
+          %li
+            %a.page-scroll{ href: "#about" } About
+          %li
+            %a.page-scroll{ href: "#process" } Process
+          %li
+            %a.page-scroll{ href: "#collection" } Collection
+          %li
+            %a.page-scroll{ href: "#locations" } Locations
+          %li
+            %a.page-scroll{ href: "#testimonials" } Testimonials
+          %li
+            %a.page-scroll{ href: "#contact" } Contact
