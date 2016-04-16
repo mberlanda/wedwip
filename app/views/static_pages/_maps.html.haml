@@ -1,0 +1,32 @@
+/ Church Modal
+#churchMap.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centeredv
+              = render partial: 'static_pages/maps/church'
+
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+          %i.fa.fa-times
+          Close
+/ Restaurant Modal
+#restaurantMap.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centeredv
+              = render partial: 'static_pages/maps/restaurant'
+
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+          %i.fa.fa-times
+          Close
