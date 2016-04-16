@@ -1,0 +1,44 @@
+%section#participations.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2 Conferma Partecipazione
+        %hr.colored/
+        %p Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        %form#guestForm{:name => "guestForm", :novalidate => ""}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Nome
+              %input#guest_name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Nome", :required => "", :type => "text"}/
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Cognome
+              %input#guest_surname.form-control{"data-validation-required-message" => "Please enter your surname.", :placeholder => "Cognome", :required => "", :type => "text"}/
+              %p.help-block.text-danger
+
+        .form-action
+          .row
+            %br
+            .col-md-offset-3.col-md-12
+              = button_tag("Aggiungi", id: "add-guest", class: 'btn default')
+
+        %h4.block Ospiti Aggiunti
+
+        %table.table
+          %tbody#added-guests-container
+
+        %script#added-guests-template{type: 'text/x-jsrender'}
+          %tr
+            %td {{:guest_name}}
+            %td {{:guest_surname}}
+            %td 
+              %a.btn.btn-icon-only.default{href: "javascript:removeGuest({{:#index}});"}
+                %i.fa.fa-times
+
+
+- provide :page_javascript do
+  %script
+    #{render(partial: 'static_pages/javascripts/guests.js', locals: { })}
