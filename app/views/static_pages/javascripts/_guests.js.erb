@@ -7,6 +7,11 @@ $(document).ready(function() {
 $("#add-guest").click(function() {
   var guest_name = $("#guest_name").val(),
       guest_surname = $("#guest_surname").val();
+  
+  if (guest_name === "" || guest_surname  === "") {
+    return;
+  }
+
   var item = {
     guest_name: guest_name,
     guest_surname: guest_surname

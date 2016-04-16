@@ -7,16 +7,18 @@
         %p Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
     .row.content-row
       .col-lg-8.col-lg-offset-2
-        %form.form-horizontal
-          .form-group.col-xs-12.floating-label-form-group.controls
-            %label.select.col-md-3.control-label{for: "guest_name"} Nome
-            .col-md-12
-              %input{id: :guest_name, class: "form-control", placeholder: "Nome"}
-          .form-group.col-xs-12.floating-label-form-group.controls
-            %label.select.col-md-3.control-label{for: "guest_surname"} Cognome
-            .col-md-12
-              %input{id: :guest_surname, class: "form-control", placeholder: "Cognome"}
-        %br
+        %form#guestForm{:name => "guestForm", :novalidate => ""}
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Nome
+              %input#guest_name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Nome", :required => "", :type => "text"}/
+              %p.help-block.text-danger
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.controls
+              %label Cognome
+              %input#guest_surname.form-control{"data-validation-required-message" => "Please enter your surname.", :placeholder => "Cognome", :required => "", :type => "text"}/
+              %p.help-block.text-danger
+
         .form-action
           .row
             %br
