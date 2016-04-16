@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/fnando/i18n-js.git
+  revision: 2ca6d31365bb41db21e373d126cac00d38d15144
+  specs:
+    i18n-js (3.0.0.rc12)
+      i18n (~> 0.6, >= 0.6.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -207,6 +214,7 @@ DEPENDENCIES
   devise
   haml
   haml-rails
+  i18n-js!
   jbuilder (~> 2.0)
   pg
   puma

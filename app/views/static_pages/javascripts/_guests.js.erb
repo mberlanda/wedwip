@@ -1,0 +1,40 @@
+var addedGuests = [];
+
+$(document).ready(function() {
+  renderGuestsTable();
+});
+
+$("#add-guest").click(function() {
+  var guest_name = $("#guest_name").val(),
+      guest_surname = $("#guest_surname").val();
+  var item = {
+    guest_name: guest_name,
+    guest_surname: guest_surname
+  };
+
+  var found = false;
+  $.each(addedGuests, function( index, value ) {
+    if (value["guest_name"] == guest_name & value["guest_surname"] == guest_surname) {
+      found = true;
+    }
+  });
+  if (found) {
+    return;
+  }
+
+  addedGuests.push(item);
+  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
+  renderGuestsTable();
+})
+
+function renderGuestsTable() {
+  var template = $.templates("#added-guests-template");
+  var htmlAgreements = template.render(addedGuests);
+  $("#added-guests-container").html(htmlAgreements);  
+}
+
+function removeGuest(index) {
+  addedGuests.splice(index, 1);
+  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
+  renderGuestsTable();
+}

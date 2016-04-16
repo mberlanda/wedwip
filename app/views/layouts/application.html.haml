@@ -20,4 +20,7 @@
     = render partial: 'layouts/navigation'
 
     = yield
+
     = render partial: 'layouts/javascripts'
+    -if content_for?(:page_javascript)
+      =yield :page_javascript

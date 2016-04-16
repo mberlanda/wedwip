@@ -1,62 +1,42 @@
-%section#work.bg-gray
-  .container.text-center.wow.fadeIn
-    %h2 Our Work
-    %hr.colored/
-    %p Examples of our work which represent our design and marketing capabilities.
-%section.portfolio-carousel.wow.fadeIn
-  .item{:style => "background-image: url('assets/img/portfolio/bg-1.jpg')"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => "assets/img/client-logos/logo-1.png"}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal1"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => "assets/img/portfolio/mobile-screens.png"}/
-  .item{:style => "background-image: url('assets/img/portfolio/bg-2.jpg')"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => "assets/img/client-logos/logo-2.png"}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal2"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => "assets/img/portfolio/tablet-screens.png"}/
-  .item{:style => "background-image: url('assets/img/portfolio/bg-3.jpg')"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => "assets/img/client-logos/logo-1.png"}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal3"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => "assets/img/portfolio/mobile-screens.png"}/
-  .item{:style => "background-image: url('assets/img/portfolio/bg-4.jpg')"}
-    .container-fluid
-      .row
-        .col-md-4.col-md-push-8
-          .project-details
-            %img.img-responsive.client-logo{:alt => "", :src => "assets/img/client-logos/logo-2.png"}/
-            %span.project-name Project Name
-            %span.project-description Branding, Website Design
-            %hr.colored/
-            %a.btn.btn-outline-light{"data-toggle" => "modal", :href => "#portfolioModal4"}
-              View Details
-              %i.fa.fa-long-arrow-right.fa-fw
-        .col-md-8.col-md-pull-4.hidden-xs
-          %img.img-responsive.portfolio-image{:alt => "", :src => "assets/img/portfolio/tablet-screens.png"}/
+%section#participations.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2 Conferma Partecipazione
+        %hr.colored/
+        %p Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        %form.form-horizontal
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label.select.col-md-3.control-label{for: "guest_name"} Nome
+            .col-md-12
+              %input{id: :guest_name, class: "form-control", placeholder: "Nome"}
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label.select.col-md-3.control-label{for: "guest_surname"} Cognome
+            .col-md-12
+              %input{id: :guest_surname, class: "form-control", placeholder: "Cognome"}
+        %br
+        .form-action
+          .row
+            %br
+            .col-md-offset-3.col-md-12
+              = button_tag("Aggiungi", id: "add-guest", class: 'btn default')
+
+        %h4.block Ospiti Aggiunti
+
+        %table.table
+          %tbody#added-guests-container
+
+        %script#added-guests-template{type: 'text/x-jsrender'}
+          %tr
+            %td {{:guest_name}}
+            %td {{:guest_surname}}
+            %td 
+              %a.btn.btn-icon-only.default{href: "javascript:removeGuest({{:#index}});"}
+                %i.fa.fa-times
+
+
+- provide :page_javascript do
+  %script
+    #{render(partial: 'static_pages/javascripts/guests.js', locals: { })}

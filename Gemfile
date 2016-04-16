@@ -6,18 +6,17 @@ gem 'puma' # Use Puma as the app server
 gem 'pg'
 gem 'rails_12factor', group: :production
 
-gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-# gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
-
-gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
-# gem 'bootstrap-sass', '~> 3.3.6'
 gem 'therubyracer', platforms: :ruby # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem "font-awesome-rails"
+gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
+gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'i18n-js', github: 'fnando/i18n-js'
+gem 'devise'
 
+# gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 # gem 'jquery-rails' # Use jquery as the JavaScript library
 # gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -45,5 +44,3 @@ end
 group :test do
   gem 'capybara'
 end
-
-gem 'devise'
