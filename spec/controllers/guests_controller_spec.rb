@@ -12,8 +12,7 @@ RSpec.describe GuestsController, type: :controller do
     get :new, guest_json: guest_json_example
 
     expect(Guest.count).to eq( guests_count + 1 )
-
-  end
+   end
 
   it "should not duplicate guests" do
 
@@ -23,9 +22,7 @@ RSpec.describe GuestsController, type: :controller do
     get :new, guest_json: guest_json_example
 
     expect{ get(:new, guest_json: guest_json_example) }.to raise_error(ActiveRecord::RecordInvalid)
-
   end
-
 
   def guest_json_example
     {name: "Name", surname: "Surname"}.to_json
