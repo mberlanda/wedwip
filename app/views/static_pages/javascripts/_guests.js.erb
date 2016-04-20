@@ -1,12 +1,12 @@
-var addedGuests = [];
+var addedGuests = <%= @guests.map{|g| {name: g.name, surname: g.surname} }.to_json.html_safe %>;
 
 $(document).ready(function() {
   renderGuestsTable();
 });
 
 $("#add-guest").click(function() {
-  var name = $("#name").val(),
-      surname = $("#surname").val();
+  var name = $("#guest_name").val(),
+      surname = $("#guest_surname").val();
   
   if (name === "" || surname  === "") {
     return;
@@ -26,11 +26,28 @@ $("#add-guest").click(function() {
   if (found) {
     return;
   }
-  
+
+  createGuest(item);
   addedGuests.push(item);
-  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
+
   renderGuestsTable();
 })
+
+function createGuest(item){
+
+  console.log(item);
+  $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '<%= guests_path %>',
+    dataType: 'json',
+    type: "POST",
+    quietMillis: 200,
+    data: { guest_json: JSON.stringify(item)},
+    success: function(response) {
+    console.log(response.body);
+    }
+  });
+}
 
 function renderGuestsTable() {
   var template = $.templates("#added-guests-template");
@@ -40,6 +57,6 @@ function renderGuestsTable() {
 
 function removeGuest(index) {
   addedGuests.splice(index, 1);
-  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
+
   renderGuestsTable();
 }
