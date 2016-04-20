@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :guests do
     collection do
       post :create
+      delete :remove
     end
   end
  

@@ -10,7 +10,7 @@ class GuestsController < ApplicationController
       @status = "success"
     rescue ActiveRecord::RecordInvalid
       @status = "invalid input"
-    end  
+    end
 
     guests = Guest.where(user: current_user).all
     
@@ -18,6 +18,24 @@ class GuestsController < ApplicationController
       format.json { render json:{ guest_list: guests.to_json, status: @status }  }
     end
 
+  end
+
+
+  def remove
+
+    begin
+      g = JSON.parse(guest_params.fetch("guest_json")).with_indifferent_access
+      Guest.where(name: g[:name], surname: g[:surname], user: current_user).first.delete
+      @status = "success"
+    rescue ActiveRecord::RecordInvalid
+      @status = "invalid input"
+    end
+
+    guests = Guest.where(user: current_user).all
+    
+    respond_to do |format|
+      format.json { render json:{ guest_list: guests.to_json, status: @status }  }
+    end
   end
 
   def guest_params

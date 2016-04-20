@@ -9,7 +9,7 @@ RSpec.describe GuestsController, type: :controller do
     guests_count = Guest.count
 
     sign_in user
-    post :create, guest_json: guest_json_example,  format: :json
+    post :create, guest_json: guest_json_example, format: :json
     
     result = JSON.parse(response.body)
     expect(result["status"]).to eq("success")
@@ -29,15 +29,15 @@ RSpec.describe GuestsController, type: :controller do
     expect(Guest.count).to eq( guests_count + 1 )
   end
 
-  it "should destroy a guest" do
-    pending "destroy to do"
+  it "should delete a guest" do
+
     guests_count = Guest.count
 
     sign_in user
-    get :new, guest_json: guest_json_example
+    post :create, guest_json: guest_json_example, format: :json
     expect(Guest.count).to eq( guests_count + 1 )
 
-    get :destroy, guest_json: guest_json_example
+    delete :remove, guest_json: guest_json_example, format: :json
     expect(Guest.count).to eq( guests_count)    
   end
 
