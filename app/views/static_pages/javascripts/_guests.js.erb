@@ -5,28 +5,28 @@ $(document).ready(function() {
 });
 
 $("#add-guest").click(function() {
-  var guest_name = $("#guest_name").val(),
-      guest_surname = $("#guest_surname").val();
+  var name = $("#name").val(),
+      surname = $("#surname").val();
   
-  if (guest_name === "" || guest_surname  === "") {
+  if (name === "" || surname  === "") {
     return;
   }
 
   var item = {
-    guest_name: guest_name,
-    guest_surname: guest_surname
+    name: name,
+    surname: surname
   };
 
   var found = false;
   $.each(addedGuests, function( index, value ) {
-    if (value["guest_name"] == guest_name & value["guest_surname"] == guest_surname) {
+    if (value["name"] == name & value["surname"] == surname) {
       found = true;
     }
   });
   if (found) {
     return;
   }
-
+  
   addedGuests.push(item);
   <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
   renderGuestsTable();

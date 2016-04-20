@@ -3,13 +3,17 @@ Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#home'
 
-  resources :guests
   resources :static_pages do
     collection do
       get :help
     end
   end
 
+  resources :guests do
+    collection do
+      post :create
+    end
+  end
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
