@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    byebug
+    
     begin
       g = JSON.parse(guest_params.fetch("guest_json")).with_indifferent_access
       Guest.create!(name: g[:name], surname: g[:surname], user: current_user)
