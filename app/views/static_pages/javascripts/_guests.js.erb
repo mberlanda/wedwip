@@ -43,11 +43,12 @@ function createGuest(item){
     type: "POST",
     quietMillis: 200,
     data: { guest_json: JSON.stringify(item)},
-    success: function(response) {
-    console.log(response.body);
+    })
+   .done(data){
+      console.log(data);
     }
-  });
-}
+  }
+
 
 function renderGuestsTable() {
   var template = $.templates("#added-guests-template");
