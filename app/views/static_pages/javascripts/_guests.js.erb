@@ -1,14 +1,19 @@
-var addedGuests = <%= @guests.map{|g| {name: g.name, surname: g.surname} }.to_json.html_safe %>;
+var guestList = <%= @guests.to_json.html_safe %>;
 
 $(document).ready(function() {
   renderGuestsTable();
 });
 
 $("#add-guest").click(function() {
-  var name = $("#guest_name").val(),
-      surname = $("#guest_surname").val();
+  
+  $("#error-input").html("");
+  $("#success-input").html("");
+
+  var name = $("#guest_name").val().trim().toLowerCase().capitalize(),
+      surname = $("#guest_surname").val().trim().toLowerCase().capitalize();
   
   if (name === "" || surname  === "") {
+    $("#error-input").html("Entrambi i campi devono essere compilati");
     return;
   }
 
@@ -18,46 +23,50 @@ $("#add-guest").click(function() {
   };
 
   var found = false;
-  $.each(addedGuests, function( index, value ) {
+  $.each(guestList, function( index, value ) {
     if (value["name"] == name & value["surname"] == surname) {
       found = true;
     }
   });
   if (found) {
+    $("#error-input").html("{name} {surname} è già stato inserito".supplant({name: name, surname: surname}));
     return;
   }
 
   createGuest(item);
-  addedGuests.push(item);
-
-  renderGuestsTable();
+  
+  $("#success-input").html("{name} {surname} è già inserito con successo".supplant({name: name, surname: surname}));
 })
 
 function createGuest(item){
 
-  console.log(item);
-  $.ajax({
+  var request = $.ajax({
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     url: '<%= guests_path %>',
     dataType: 'json',
     type: "POST",
     quietMillis: 200,
-    data: { guest_json: JSON.stringify(item)},
-    })
-   .done(data){
-      console.log(data);
-    }
-  }
+    data: { guest_json: JSON.stringify(item)}
+    });
+
+  request.done(function(data){
+      if (data["status"] == "success"){
+        console.log(data["guest_list"]);      
+      }
+      guestList = JSON.parse(data["guest_list"]);
+      renderGuestsTable();
+  });
+}
 
 
 function renderGuestsTable() {
   var template = $.templates("#added-guests-template");
-  var htmlAgreements = template.render(addedGuests);
-  $("#added-guests-container").html(htmlAgreements);  
+  var htmlGuestList = template.render(guestList);
+  $("#added-guests-container").html(htmlGuestList);  
 }
 
 function removeGuest(index) {
-  addedGuests.splice(index, 1);
+  guestList.splice(index, 1);
 
   renderGuestsTable();
 }

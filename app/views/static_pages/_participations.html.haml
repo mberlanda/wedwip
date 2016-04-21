@@ -11,12 +11,12 @@
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
               %label Nome
-              %input#guest_name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Nome", :required => "", :type => "text"}/
+              %input#guest_name.form-control{:placeholder => "Nome", :type => "text"}/
               %p.help-block.text-danger
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
               %label Cognome
-              %input#guest_surname.form-control{"data-validation-required-message" => "Please enter your surname.", :placeholder => "Cognome", :required => "", :type => "text"}/
+              %input#guest_surname.form-control{:placeholder => "Cognome", :type => "text"}/
               %p.help-block.text-danger
 
         .form-action
@@ -26,6 +26,8 @@
               = button_tag("Aggiungi", id: "add-guest", class: 'btn default')
 
         %h4.block Ospiti Aggiunti
+        %p#error-input{style:"color:red;"}
+        %p#success-input{style:"color:green;"}
 
         %table.table
           %tbody#added-guests-container
