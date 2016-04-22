@@ -37,11 +37,23 @@ RSpec.describe GuestsController, type: :controller do
     post :create, guest_json: guest_json_example, format: :json
     expect(Guest.count).to eq( guests_count + 1 )
 
-    delete :remove, guest_json: guest_json_example, format: :json
+    guest = parse_first_guest(response.body)
+    
+    delete :destroy, id: guest["id"], format: :json
     expect(Guest.count).to eq( guests_count)    
   end
 
   def guest_json_example
     {name: "Name", surname: "Surname"}.to_json
   end
+
+  def parse_first_guest(body)
+    guest_list = parse_guest_list(body)
+    JSON.parse(guest_list).first
+  end
+
+  def parse_guest_list(body)
+    JSON.parse(body)["guest_list"]
+  end
+
 end

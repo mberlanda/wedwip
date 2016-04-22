@@ -21,11 +21,11 @@ class GuestsController < ApplicationController
   end
 
 
-  def remove
+  def destroy
 
     begin
-      g = JSON.parse(guest_params.fetch("guest_json")).with_indifferent_access
-      Guest.where(name: g[:name], surname: g[:surname], user: current_user).first.delete
+      id_to_delete = guest_params.fetch("id")
+      Guest.where(id: id_to_delete, user: current_user).first.delete
       @status = "success"
     rescue ActiveRecord::RecordInvalid
       @status = "invalid input"
@@ -39,7 +39,7 @@ class GuestsController < ApplicationController
   end
 
   def guest_params
-    params.permit(:guest_json)
+    params.permit(:guest_json, :id)
   end
 
 end
