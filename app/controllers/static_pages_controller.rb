@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
   before_action :authenticate_user!
 
   def home
-    @guests = Guest.where(user: current_user).all    
+    @guests = Guest.where(user: current_user).all
+    @suggestions = TripSuggestion.all
   end
 
   def help

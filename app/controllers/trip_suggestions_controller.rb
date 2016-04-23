@@ -15,7 +15,7 @@ class TripSuggestionsController < ApplicationController
     suggestions = TripSuggestion.all
     
     respond_to do |format|
-      format.json { render json:{ suggestions_list: suggestions.to_json, status: @status }  }
+      format.json { render json:{ suggestion_json: suggestions.to_json, status: @status }  }
     end
 
   end
