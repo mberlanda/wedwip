@@ -1,45 +1,83 @@
-var addedGuests = [];
+var guestList = <%= @guests.to_json.html_safe %>;
 
 $(document).ready(function() {
   renderGuestsTable();
 });
 
 $("#add-guest").click(function() {
-  var guest_name = $("#guest_name").val(),
-      guest_surname = $("#guest_surname").val();
   
-  if (guest_name === "" || guest_surname  === "") {
+  $("#error-input").html("");
+  $("#success-input").html("");
+
+  var name = $("#guest_name").val().trim().toLowerCase().capitalize(),
+      surname = $("#guest_surname").val().trim().toLowerCase().capitalize();
+  
+  if (name === "" || surname  === "") {
+    $("#error-input").html("Entrambi i campi devono essere compilati");
     return;
   }
 
   var item = {
-    guest_name: guest_name,
-    guest_surname: guest_surname
+    name: name,
+    surname: surname
   };
 
   var found = false;
-  $.each(addedGuests, function( index, value ) {
-    if (value["guest_name"] == guest_name & value["guest_surname"] == guest_surname) {
+  $.each(guestList, function( index, value ) {
+    if (value["name"] == name & value["surname"] == surname) {
       found = true;
     }
   });
   if (found) {
+    $("#error-input").html("{name} {surname} è già stato inserito".supplant({name: name, surname: surname}));
     return;
   }
 
-  addedGuests.push(item);
-  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
-  renderGuestsTable();
+  createGuest(item);
+  
+  $("#success-input").html("{name} {surname} è stato inserito con successo".supplant({name: name, surname: surname}));
 })
+
+function createGuest(item){
+
+  var request = $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '<%= guests_path %>',
+    dataType: 'json',
+    type: "POST",
+    quietMillis: 200,
+    data: { guest_json: JSON.stringify(item)}
+    });
+
+  request.done(function(data){
+      if (data["status"] == "success"){
+        console.log(data["guest_list"]);      
+      }
+      guestList = JSON.parse(data["guest_list"]);
+      renderGuestsTable();
+  });
+}
+
 
 function renderGuestsTable() {
   var template = $.templates("#added-guests-template");
-  var htmlAgreements = template.render(addedGuests);
-  $("#added-guests-container").html(htmlAgreements);  
+  var htmlGuestList = template.render(guestList);
+  $("#added-guests-container").html(htmlGuestList);  
 }
 
-function removeGuest(index) {
-  addedGuests.splice(index, 1);
-  <!-- $("#simulation_agreements_json").val(JSON.stringify(addedGuests)); -->
-  renderGuestsTable();
+function removeGuest(id_to_delete) {
+  var request = $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '<%= guest_path(id: "id_to_delete") %>'.replace("id_to_delete", id_to_delete),
+    type: "DELETE",
+    quietMillis: 200
+    });
+
+  request.done(function(data){
+    if (data["status"] == "success"){
+      console.log(data["guest_list"]);      
+    }
+    guestList = JSON.parse(data["guest_list"]);
+    renderGuestsTable();
+  });
 }

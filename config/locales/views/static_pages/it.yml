@@ -1,0 +1,56 @@
+it:
+  header:
+    date: 1 Ottobre 2016
+    button: Scopri
+  about:
+    header:
+      title: Il nostro matrimonio
+      description: In questo sito troverai tutte le informazioni riguardanti il nostro matrimonio che si terrà l'1 Ottobre 2016.
+    participation:
+      title: Presenza
+      description: Conferma la presenza tua e dei tuoi ospiti alla cerimonia e ai festeggiamenti. E se hai voglia di aiutare i nostri amici arrivati da lontano, offri qualche posto in auto per gli spostamenti!
+    location:
+      title: Locations
+      description: Indicazioni su come raggiungere la cattedrale e il luogo del ricevimento.
+    gift:
+      title: Lista Nozze
+      description: In questa sezione potrete farci un regalo per questa nuova emozionante avventura.
+  locations:
+    map: Mappa
+    header:
+      title: Location
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.
+    church:
+      title: Cerimonia
+      where:
+        title: Dove
+        description: Basilica di Sant'Alessando in Colonna
+      when:
+        title: Orario
+        description: '16.00'
+      address:
+        title: Indirizzo
+        street: "Via Sant'Alessandro, 35"
+        city: 24122 Bergamo BG
+    restaurant:
+      title: Ricevimento
+      where:
+        title: Dove
+        description: Tenuta Serradesca di Maria Acquaroli
+      when:
+        title: Orario
+        description: '18.30'
+      address:
+        title: Indirizzo
+        street: "Via Serradesca, 2"
+        city: 24020 Scanzorosciate BG
+  participation:
+    header:
+      title: Conferma Partecipazione
+      description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+    guest_form:
+      name: Nome
+      surname: Cognome
+      add: Aggiungi
+    invited_guests:
+      title: Ospiti Aggiunti

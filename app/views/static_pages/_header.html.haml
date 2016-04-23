@@ -4,12 +4,10 @@
     .container.wow.fadeIn
       .row
         .col-md-10.col-md-offset-1
-          %span.quote
-            1 Ottobre 2016
-          %span.quote
-            Matrimonio <span class= "text-primary">Mauro</span> e <span class= "text-primary">Beatrice</span>.
+          %span.quote= t('header.date')
+          %span.quote Matrimonio <span class= "text-primary">Mauro</span> e <span class= "text-primary">Beatrice</span>.
           %hr.colored
-          %a.btn.btn-outline-light.page-scroll{ href: "#about" } Scopri
+          %a.btn.btn-outline-light.page-scroll{ href: "#about" }= t('header.button')
 
   .scroll-down
     %a.btn.page-scroll{ href: "#about" }
