@@ -2,50 +2,49 @@
   .container.wow.fadeIn
     .row.text-center
       .col-lg-12
-        %h2 Locations
+        %h2= t('locations.header.title')
         %hr.colored
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.
+        %p= t('locations.header.description')
     .row.content-row
       .col-md-6
         .pricing-item
-          %h3 Cerimonia
+          %h3= t('locations.church.title')
           %hr.colored
           %ul.list-group
             %li.list-group-item
-              %em Dove:
+              %em= t('locations.church.where.title')
               %br
-              Basilica di Sant'Alessando in Colonna
+              =t('locations.church.where.description')
             %li.list-group-item
-              %em Orario:
+              %em= t('locations.church.when.title')
               %br
-              16.00 - 17.30
+              =t('locations.church.when.description')
             %li.list-group-item
-              %em Address:
+              %em= t('locations.church.address.title')
               %br
-              Via Sant'Alessandro, 35
+              =t('locations.church.address.street')
               %br
-              24122 Bergamo BG
+              =t('locations.church.address.city')
             %li.list-group-item
-              %a.btn.btn-outline-dark{"data-toggle" => "modal", :href => "#churchMap"} Mappa
-
+              %a.btn.btn-outline-dark{"data-toggle" => "modal", :href => "#churchMap"}= t('locations.map')
       .col-md-6  
         .pricing-item
-          %h3 Ricevimento
+          %h3= t('locations.restaurant.title')
           %hr.colored
           %ul.list-group
             %li.list-group-item
-              %em Dove:
+              %em= t('locations.restaurant.where.title')
               %br
-              Tenuta Serradesca di Maria Acquaroli
+              =t('locations.restaurant.where.description')
             %li.list-group-item
-              %em Orario:
+              %em= t('locations.restaurant.when.title')
               %br
-              18.30 - 02.30
+              =t('locations.restaurant.when.description')
             %li.list-group-item
-              %em Address:
+              %em= t('locations.restaurant.address.title')
               %br
-              Via Serradesca, 2
+              =t('locations.restaurant.address.street')
               %br
-              24020 Scanzorosciate BG
+              =t('locations.restaurant.address.city')
             %li.list-group-item
-              %a.btn.btn-outline-dark{"data-toggle" => "modal", :href => "#restaurantMap"} Mappa
+              %a.btn.btn-outline-dark{"data-toggle" => "modal", :href => "#restaurantMap"}= t('locations.map')
