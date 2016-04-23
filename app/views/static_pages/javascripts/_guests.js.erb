@@ -65,8 +65,19 @@ function renderGuestsTable() {
   $("#added-guests-container").html(htmlGuestList);  
 }
 
-function removeGuest(index) {
-  guestList.splice(index, 1);
+function removeGuest(id_to_delete) {
+  var request = $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '<%= guest_path(id: "id_to_delete") %>'.replace("id_to_delete", id_to_delete),
+    type: "DELETE",
+    quietMillis: 200
+    });
 
-  renderGuestsTable();
+  request.done(function(data){
+    if (data["status"] == "success"){
+      console.log(data["guest_list"]);      
+    }
+    guestList = JSON.parse(data["guest_list"]);
+    renderGuestsTable();
+  });
 }
