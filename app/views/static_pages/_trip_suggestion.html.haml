@@ -14,9 +14,9 @@
       .row.control-group
         .form-group.col-xs-12.floating-label-form-group.controls
           %label Messagio
-          %textarea#message.form-control{:placeholder => "Message", :rows => "5"}
+          %textarea#suggestion_message.form-control{:placeholder => "Message", :rows => "5"}
           %p.help-block.text-danger
-      .form-action
-        .row
-          %br
-          = button_tag("Suggerisci", id: "add-suggestion", class: 'btn default')
+    .form-action
+      .row
+        %br
+        = button_tag("Suggerisci", id: "add-suggestion", class: 'btn default')

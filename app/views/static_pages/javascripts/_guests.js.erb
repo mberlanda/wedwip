@@ -29,13 +29,13 @@ $("#add-guest").click(function() {
     }
   });
   if (found) {
-    $("#error-input").html("{name} {surname} è già stato inserito".supplant({name: name, surname: surname}));
+    $("#error-input").html("{name} {surname} è già stato inserito".supplant(item));
     return;
   }
 
   createGuest(item);
   
-  $("#success-input").html("{name} {surname} è stato inserito con successo".supplant({name: name, surname: surname}));
+  $("#success-input").html("{name} {surname} è stato inserito con successo".supplant(item));
 })
 
 function createGuest(item){
