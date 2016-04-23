@@ -2,32 +2,32 @@
   .container.wow.fadeIn
     .row
       .col-lg-12.text-center
-        %h2 Conferma Partecipazione
+        %h2= t('participation.header.title')
         %hr.colored/
-        %p Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+        %p= t('participation.header.description')
     .row.content-row
       .col-lg-8.col-lg-offset-2
         %form#guestForm{:name => "guestForm", :novalidate => ""}
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
-              %label Nome
-              %input#guest_name.form-control{:placeholder => "Nome", :type => "text"}/
+              %label= t('participation.guest_form.name')
+              %input#guest_name.form-control{:placeholder => "#{t('participation.guest_form.name')}", :type => "text"}/
               %p.help-block.text-danger
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
-              %label Cognome
-              %input#guest_surname.form-control{:placeholder => "Cognome", :type => "text"}/
+              %label= t('participation.guest_form.surname')
+              %input#guest_surname.form-control{:placeholder => "#{t('participation.guest_form.surname')}", :type => "text"}/
               %p.help-block.text-danger
 
         .form-action
           .row
             %br
             .col-md-offset-3.col-md-12
-              = button_tag("Aggiungi", id: "add-guest", class: 'btn default')
+              = button_tag("#{t('participation.guest_form.add')}", id: "add-guest", class: 'btn default')
 
-        %h4.block Ospiti Aggiunti
-        %p#error-input{style:"color:red;"}
-        %p#success-input{style:"color:green;"}
+        %h4.block= t('participation.invited_guests.title')
+        %p#error-input.block{style:"color:red;"}
+        %p#success-input.block{style:"color:green;"}
 
         %table.table
           %tbody#added-guests-container

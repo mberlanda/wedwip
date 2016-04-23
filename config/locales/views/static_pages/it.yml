@@ -44,3 +44,13 @@ it:
         title: Indirizzo
         street: "Via Serradesca, 2"
         city: 24020 Scanzorosciate BG
+  participation:
+    header:
+      title: Conferma Partecipazione
+      description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+    guest_form:
+      name: Nome
+      surname: Cognome
+      add: Aggiungi
+    invited_guests:
+      title: Ospiti Aggiunti
