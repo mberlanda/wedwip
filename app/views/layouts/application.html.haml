@@ -15,6 +15,8 @@
     -else
       %title WedWip
     = render partial: 'layouts/stylesheets'
+    -if content_for?(:page_stylesheet)
+      =yield :page_stylesheet
     = csrf_meta_tags
 
   / Alternate Body Classes: .modern and .vintage

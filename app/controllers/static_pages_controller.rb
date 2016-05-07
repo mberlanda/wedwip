@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @guests = Guest.where(user: current_user).all
-    @suggestions = TripSuggestion.all
+    @suggestions = Place.all.map{|p| p.marker} || []
   end
 
   def help
