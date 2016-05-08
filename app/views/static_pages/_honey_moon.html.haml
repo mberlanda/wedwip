@@ -7,12 +7,12 @@
     .row.content-row
       %p Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante
     
-.map_html
+
+.map_body
   :css
     #{render(partial: 'static_pages/stylesheets/maps_search_box.css')}          
-  .map_body
-    %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
-    #map
+  %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
+  #map
   %script
     #{render(partial: 'static_pages/javascripts/maps_search_box.js', locals: { })}
   %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"}
