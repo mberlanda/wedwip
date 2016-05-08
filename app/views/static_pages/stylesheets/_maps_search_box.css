@@ -1,10 +1,17 @@
-.map_html, .map_body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.map_body {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  padding-bottom: 56.25%; /* Ratio 16:9 ( 100%/16*9 = 56.25% ) */
 }
 #map {
-  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
 }
 .controls {
   margin-top: 10px;
