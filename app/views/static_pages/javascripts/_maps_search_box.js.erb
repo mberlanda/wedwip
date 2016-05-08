@@ -1,35 +1,41 @@
 var suggestionsList = <%= @suggestions.to_json.html_safe %> ;
 
-function loadMakers(markerObj, parent_map){
+function loadMakers(markerObj){
   var markers = [] ;
-  console.log(suggestionsList);
-  for (index in suggestionsList){
-    elem = suggestionsList[index];
-    elem.map = parent_map;
 
-    markers.push(new markerObj(elem));
-  };
+  suggestionsList.forEach(function(elem, index){
+    markers.push(new markerObj(
+      {map: map,
+       icon: elem.icon, 
+       title: elem.title,
+       position: elem.position}));
+    });
   return markers;
 }
 
 function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 42.991843, lng: 12.495453},
     zoom: 7,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+  
+  searchInput = document.getElementById('pac-input');
+  searchBox = new google.maps.places.SearchBox(searchInput);
 
   // Create the search box and link it to the UI element.
-  var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(searchInput);
+  processAndDrawMap();
 
+};
+
+function processAndDrawMap(){
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
     searchBox.setBounds(map.getBounds());
   });
 
-  var markers = loadMakers(google.maps.Marker, map);
+  var markers = loadMakers(google.maps.Marker);
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', function() {
@@ -80,10 +86,6 @@ function initAutocomplete() {
 }
 
 function createMarker(item){
-  console.log(item);
-  console.log(JSON.stringify(item.icon));
-  console.log(JSON.stringify(item.title));
-  console.log(JSON.stringify(item.position));  
 
   var request = $.ajax({
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -100,7 +102,7 @@ function createMarker(item){
     });
 
   request.done(function(data){
-      suggestionsList = JSON.parse(data["markers"]);
-      initAutocomplete();
+      suggestionsList = JSON.parse(data.markers);
+      processAndDrawMap();
   });
 };
