@@ -8,11 +8,13 @@
     .row.text-center
       .col-md-6.col-sm-6
         .about-content.wow.fadeIn{ "data-wow-delay" => ".2s" }
-          %i.fa.fa-edit.fa-4x
+          %a{href: '#participations'}
+            %i.fa.fa-edit.fa-4x
           %h3= t('about.participation.title')
           %p= t('about.participation.description')
       .col-md-6.col-sm-6
         .about-content.wow.fadeIn{ "data-wow-delay" => ".s" }
-          %i.fa.fa-gift.fa-4x
+          %a{href: '#gift'}
+            %i.fa.fa-gift.fa-4x
           %h3= t('about.gift.title')
           %p= t('about.gift.description')
