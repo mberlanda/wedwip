@@ -1,12 +1,12 @@
-%section.pricing#locations{ style: "background-image: url(#{asset_path('img/fashion/locations/chiesa.jpg')})" }
+%section.pricing#locations{ style: "background-image: url(#{asset_path('img/chiesa.jpg')})" }
   .container.wow.fadeIn
     .row.text-center
       .col-lg-12
         %h2= t('locations.header.title')
-        %hr.colored
-        %p= t('locations.header.description')
+        /%hr.colored
+        /%p= t('locations.header.description')
     .row.content-row
-      .col-md-6
+      .col-md-6.col-sm-6
         .pricing-item
           %h3= t('locations.church.title')
           %hr.colored
@@ -27,7 +27,7 @@
               =t('locations.church.address.city')
             %li.list-group-item
               %a.btn.btn-outline-dark{"data-toggle" => "modal", :href => "#churchMap"}= t('locations.map')
-      .col-md-6  
+      .col-md-6.col-sm-6  
         .pricing-item
           %h3= t('locations.restaurant.title')
           %hr.colored

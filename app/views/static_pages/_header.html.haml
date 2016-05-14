@@ -1,12 +1,16 @@
-/ Instructions: Set your background image using the URL below.
-%header{ style: "background-image: url(#{asset_path('img/fashion/menu.jpg')})" }
-  %aside.cta-quote
+%header{ style: "background-image: url(#{asset_path('img/castle.jpg')})" }
+
+  %aside.header-quote
     .container.wow.fadeIn
       .row
         .col-md-10.col-md-offset-1
-          %span.quote= t('header.date')
-          %span.quote Matrimonio <span class= "text-primary">Mauro</span> e <span class= "text-primary">Beatrice</span>.
+          / %span.quote= t('header.date')
+          %span.quote
+            %span.text-primary Mauro e Beatrice
           %hr.colored
+          %span.quote Con grande gioia annunciamo il nostro matrimonio che si terrà a Bergamo l'1 Ottobre 2016
+          %br
+          %br
           %a.btn.btn-outline-light.page-scroll{ href: "#about" }= t('header.button')
 
   .scroll-down

@@ -1,17 +1,19 @@
-%section#trip.testimonials
-  .container.wow.fadeIn
+%section.bg-gray#trip.testimonials
+  .container.text-center.wow.fadeIn
     .row
-      %h2 Viaggio di Nozze
-      %hr.colored/
-      %h4 Suggerisci una tappa del viaggio di nozze.
+      .col-lg-12
+        %h2 Viaggio di Nozze
+        %hr.colored/
+        %h4 Suggerisci una tappa del viaggio di nozze.
     .row.content-row
-      %p Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante
-    
+      .col-lg-12
+        %p Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante e ci penseremo noi a ritrovarli
+
 
 .map_body
   :css
     #{render(partial: 'static_pages/stylesheets/maps_search_box.css')}          
-  %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
+  %input#pac-input.map-controls{:placeholder => "Search Box", :type => "text"}/
   #map
   %script
     #{render(partial: 'static_pages/javascripts/maps_search_box.js', locals: { })}

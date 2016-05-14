@@ -6,23 +6,15 @@
         %p= t('about.header.description')
         %hr.colored
     .row.text-center
-      .col-md-3.col-sm-6.wow.fadeIn{ "data-wow-delay" => ".2s" }
-        .about-content
-          %i.fa.fa-edit.fa-4x
+      .col-md-6.col-sm-6
+        .about-content.wow.fadeIn{ "data-wow-delay" => ".2s" }
+          %a{href: '#participations'}
+            %i.fa.fa-edit.fa-4x
           %h3= t('about.participation.title')
           %p= t('about.participation.description')
-      .col-md-3.col-sm-6.wow.fadeIn{ "data-wow-delay" => ".4s" }
-        .about-content
-          %i.fa.fa-map.fa-4x
-          %h3= t('about.location.title')
-          %p= t('about.location.description')
-      .col-md-3.col-sm-6.wow.fadeIn{ "data-wow-delay" => ".6s" }
-        .about-content
-          %i.fa.fa-heart.fa-4x
-          %h3 BlaBlaBla
-          %p Testo ancora da concordare
-      .col-md-3.col-sm-6.wow.fadeIn{ "data-wow-delay" => ".s" }
-        .about-content
-          %i.fa.fa-gift.fa-4x
+      .col-md-6.col-sm-6
+        .about-content.wow.fadeIn{ "data-wow-delay" => ".s" }
+          %a{href: '#gift'}
+            %i.fa.fa-gift.fa-4x
           %h3= t('about.gift.title')
           %p= t('about.gift.description')

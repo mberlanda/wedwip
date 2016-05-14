@@ -2,27 +2,28 @@
   .container.wow.fadeIn
     .row
       .col-lg-12.text-center
-        %h2 Sign up
-        %hr.colored/
-        %p Please register below.
+        %h2 Registrati
+        /%hr.colored/
+        /%p Prego registrati di seguito.
     .row.content-row
       .col-lg-8.col-lg-offset-2
         = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: :lsignUpForm, name: :signUpForm }) do |f|
           = f.error_notification
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
-              = f.input :email, required: true, label: "Email Address", placeholder: "Email Address", input_html:{id: :email , class: "form-control"}
+              = f.input :email, required: true, label: "Email", placeholder: "Email", input_html:{id: :email , class: "form-control"}
               %p.help-block.text-danger
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
               = f.input :password, required: true, label: "Password", placeholder: "Password", input_html:{id: :password , class: "form-control"}
               %p.help-block.text-danger
-              = f.input :password_confirmation, required: true, label: "Password Confirmation", placeholder: "Password Confirmation", input_html:{:type => "password", id: :password , class: "form-control"}
+              = f.input :password_confirmation, required: true, label: "Conferma Password", placeholder: "Conferma Password", input_html:{:type => "password", id: :password , class: "form-control"}
               %p.help-block.text-danger
           %br/
           #success
           .row
             .form-group.col-xs-12
-              = f.button :submit, "Sign up", class: "btn btn-outline-dark"
+              = f.button :submit, "Registrati", class: "btn btn-outline-dark"
     .row.content-row
-      = render "devise/shared/links"
+      .col-lg-8.col-lg-offset-2
+        = render "devise/shared/links"
