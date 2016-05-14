@@ -47,7 +47,7 @@ it:
   participation:
     header:
       title: Conferma Partecipazione
-      description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti.
+      description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti utilizzando il codice di verifica inserito nell'invito.
     guest_form:
       name: Nome
       surname: Cognome

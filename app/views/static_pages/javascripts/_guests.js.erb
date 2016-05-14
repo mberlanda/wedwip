@@ -1,4 +1,5 @@
 var guestList = <%= @guests.to_json.html_safe %>;
+var validationKey = "e5d272873508422db558acb2e76f1c281e7f76e41f58a024519272cdabce15e59ae6e1e0d1fa850951af51c18ce751d8782f71f24bc09458b2accc47705defbe";
 
 $(document).ready(function() {
   renderGuestsTable();
@@ -10,10 +11,16 @@ $("#add-guest").click(function() {
   $("#success-input").html("");
 
   var name = $("#guest_name").val().trim().toLowerCase().capitalize(),
-      surname = $("#guest_surname").val().trim().toLowerCase().capitalize();
+      surname = $("#guest_surname").val().trim().toLowerCase().capitalize(),
+      validationCode = $("#guest_validation").val().trim().encrypt();
   
+  if (validationCode != validationKey) {
+    $("#error-input").html("Il codice di verifica inserito non è corretto");
+    return;
+  }
+
   if (name === "" || surname  === "") {
-    $("#error-input").html("Entrambi i campi devono essere compilati");
+    $("#error-input").html("Tutti i campi devono essere compilati");
     return;
   }
 

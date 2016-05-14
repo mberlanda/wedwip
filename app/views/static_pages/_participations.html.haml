@@ -5,8 +5,18 @@
         %h2= t('participation.header.title')
         %hr.colored/
         %p= t('participation.header.description')
+
     .row.content-row
       .col-lg-8.col-lg-offset-2
+        %span Codice di verifica
+        .row.control-group
+          .form-group.col-xs-12.floating-label-form-group.controls
+            %label Codice di verifica
+            %input#guest_name.form-control{:placeholder => "Inserisci il codice di verifica", :type => "text"}/
+            %p.help-block.text-danger      
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        %span Nome ospite
         %form#guestForm{:name => "guestForm", :novalidate => ""}
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
