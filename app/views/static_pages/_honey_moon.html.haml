@@ -11,7 +11,7 @@
 .map_body
   :css
     #{render(partial: 'static_pages/stylesheets/maps_search_box.css')}          
-  %input#pac-input.controls{:placeholder => "Search Box", :type => "text"}/
+  %input#pac-input.map-controls{:placeholder => "Search Box", :type => "text"}/
   #map
   %script
     #{render(partial: 'static_pages/javascripts/maps_search_box.js', locals: { })}
