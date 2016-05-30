@@ -1,5 +1,7 @@
 = render partial: 'shared/login_header'
 = render partial: 'shared/login'
+%aside.cta-quote{ style: "background-image: url('#{asset_path('img/terrace.jpg')}');"}
+= render partial: 'shared/register'
 
 - provide :page_title do
   %title WedWip | Login
