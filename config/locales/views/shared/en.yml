@@ -14,7 +14,7 @@ en:
       password:
         label: Password
         placeholder: Password
-      submit: Entra
+      submit: Enter
   register:
     form:
       title: Sign Up
