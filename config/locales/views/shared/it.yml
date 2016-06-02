@@ -1,0 +1,30 @@
+it:
+  header:
+    text-primary: Mauro e Beatrice
+    quote: Con grande gioia annunciano il loro matrimonio
+    buttons:
+      login: Accedi
+      signup: Registrati
+  login:
+    form:
+      title: Accedi
+      email:
+        label: Email
+        placeholder: Email
+      password:
+        label: Password
+        placeholder: Password
+      submit: Entra
+  register:
+    form:
+      title: Registrati
+      email:
+        label: Email
+        placeholder: Email
+      password:
+        label: Password
+        placeholder: Password
+      password_confirmation:
+        label: Conferma Password
+        placeholder: Conferma Password        
+      submit: Registrati

@@ -6,17 +6,17 @@
         .col-md-10.col-md-offset-1
           / %span.quote= t('header.date')
           %span.quote
-            %span.text-primary Mauro e Beatrice
+            %span.text-primary= t('header.text-primary')
           %hr.colored
-          %span.quote Con grande gioia annunciano il loro matrimonio
+          %span.quote= t('header.quote')
           %br
           .col-md-12
             .col-md-6
               %br/
-              %a.btn.btn-outline-light.page-scroll{ href: "#login" } Accedi
+              %a.btn.btn-outline-light.page-scroll{ href: "#login" }= t('header.buttons.login')
             .col-md-6
               %br/
-              %a.btn.btn-outline-light.page-scroll{ href: "#register" } Registrati
+              %a.btn.btn-outline-light.page-scroll{ href: "#register" }= t('header.buttons.signup')
 
 
   .scroll-down
