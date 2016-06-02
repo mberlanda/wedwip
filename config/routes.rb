@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+
+scope "(:locale)", locale: /en|it/ do
+
   devise_for :users
   root 'static_pages#home'
 
@@ -9,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
+end
   resources :guests
   resources :trip_suggestions
   resources :places

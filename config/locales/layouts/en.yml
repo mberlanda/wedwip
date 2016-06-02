@@ -1,0 +1,13 @@
+en:
+  navbar:
+    about: About
+    locations: Locations
+    participations: Participation
+    gift: Gift
+    trip: Honeymoon
+    login: Login
+    register: Sign Up
+    language:
+      choose: Choose Language
+      ita: Italiano
+      eng: English

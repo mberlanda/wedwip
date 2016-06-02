@@ -1,0 +1,30 @@
+en:
+  header:
+    text-primary: Mauro e Beatrice
+    quote: Are delighted to invite you to celebrate their marriage
+    buttons:
+      login: Login
+      signup: Sign Up
+  login:
+    form:
+      title: Login
+      email:
+        label: Email
+        placeholder: Email
+      password:
+        label: Password
+        placeholder: Password
+      submit: Entra
+  register:
+    form:
+      title: Sign Up
+      email:
+        label: Email
+        placeholder: Email
+      password:
+        label: Password
+        placeholder: Password
+      password_confirmation:
+        label: Password Confirmation
+        placeholder: Password Confirmation        
+      submit: Sign Up

@@ -1,0 +1,13 @@
+it:
+  navbar:
+    about: About
+    locations: Locations
+    participations: Partecipa
+    gift: Regalo
+    trip: Luna di Miele
+    login: Accedi
+    register: Registrati
+    language:
+      choose: Scegli Lingua
+      ita: Italiano
+      eng: English
