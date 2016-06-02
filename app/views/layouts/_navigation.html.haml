@@ -35,6 +35,13 @@
 
           %li.hidden
             %a.page-scroll{ href: "#page-top" }
+
+          - if I18n.locale != :it
+            %li
+              = link_to t('navbar.language.ita'), locale: :it, class: 'page-scroll'
+          - if I18n.locale != :en
+            %li
+              = link_to t('navbar.language.eng'), locale: :en, class: 'page-scroll'
           %li
             %a.page-scroll{ href: "#login" }= t('navbar.login')
           %li
