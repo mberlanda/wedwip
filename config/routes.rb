@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   end
 
-  resources :guests
+  resources :guests, only: [:create, :destroy, :index]
   resources :trip_suggestions
-  resources :places
+  resources :places, only: [:create, :index]
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

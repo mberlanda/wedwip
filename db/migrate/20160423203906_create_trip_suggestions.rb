@@ -1,3 +1,6 @@
+class TripSuggestion  < ActiveRecord::Base  
+end
+
 class CreateTripSuggestions < ActiveRecord::Migration
   def change
     create_table :trip_suggestions do |t|
