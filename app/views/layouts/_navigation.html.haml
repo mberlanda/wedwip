@@ -13,7 +13,7 @@
         %img.img-responsive{ alt: "", src: asset_path("img/fashion/logo.png")}
     
     / Collect the nav links, forms, and other content for toggling
-    - if user_signed_in?
+    - if user_signed_in? && is_root? 
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav.navbar-right
 
@@ -36,6 +36,24 @@
             %a.page-scroll{ href: "#gift" }= t('navbar.gift')
           %li
             %a.page-scroll{ href: "#trip" }= t('navbar.trip')
+    
+    - elsif user_signed_in? && !is_root? 
+
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        %ul.nav.navbar-nav.navbar-right
+
+          %li.hidden
+            %a.page-scroll{ href: "#page-top" }
+
+          - if I18n.locale != :it
+            %li
+              = link_to t('navbar.language.ita'), {locale: :it}, class: 'page-scroll'
+          - if I18n.locale != :en
+            %li
+              = link_to t('navbar.language.eng'), {locale: :en}, class: 'page-scroll'
+          %li
+            %a.page-scroll{ href: root_path }= t('navbar.home')
+
     - else
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav.navbar-right
