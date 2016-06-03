@@ -2,6 +2,10 @@ class GuestsController < ApplicationController
   
   before_action :authenticate_user!
 
+  def index
+    @guests = Guest.includes(:user).all
+  end
+
   def create
     
     begin
