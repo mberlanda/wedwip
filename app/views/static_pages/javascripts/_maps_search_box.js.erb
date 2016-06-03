@@ -45,12 +45,10 @@ function processAndDrawMap(){
       return;
     }
 
-    // Clear out the old markers.
-    //markers.forEach(function(marker) {
-    //  marker.setMap(null);
-    //});
-    //markers = [];
-
+    if (places.length >1){
+      // If the result is more than one place, take the first only
+      places = [ places[0] ]
+    }
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
@@ -68,24 +66,32 @@ function processAndDrawMap(){
         icon: icon,
         title: place.name,
         position: place.geometry.location
-      }
+      };
 
-      markers.push(new google.maps.Marker(marker));
+      var fullAddress = place.formatted_address;
 
-      createMarker(marker);
+      $('#suggestionTitle').html(place.name);
+      $('#searchMapModal').modal('show');
+      $('#suggestion-submit').click(function(){
+          var reason = $("#suggestion-reason").val();
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
+          markers.push(new google.maps.Marker(marker));
+          createMarker(marker, reason, fullAddress);
+          if (place.geometry.viewport) {
+          // Only geocodes have viewport.
+          bounds.union(place.geometry.viewport);
+          } else {
+          bounds.extend(place.geometry.location);
+          }
+      });
+
     });
-    map.fitBounds(bounds);
+
+    // map.fitBounds(bounds);
   });
 }
 
-function createMarker(item){
+function createMarker(item, text, address){
 
   var request = $.ajax({
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -94,11 +100,13 @@ function createMarker(item){
     type: "POST",
     quietMillis: 200,
     data: { marker: JSON.stringify(item, function(key,value){
-        if(key == "map"){
-            return undefined;
-        }
-        return value;
-      })}
+              if(key == "map"){
+                  return undefined;
+              }
+              return value;
+              }),
+            reason: text,
+            address: address }
     });
 
   request.done(function(data){

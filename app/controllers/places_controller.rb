@@ -6,7 +6,9 @@ class PlacesController < ApplicationController
     
     begin
       marker = JSON.parse(marker_params.fetch("marker"))
-      Place.create!(marker: marker, user: current_user)
+      reason = marker_params.fetch(:reason)
+      full_address = marker_params.fetch(:address)
+      Place.create!(marker: marker, user: current_user, reason: reason, address: full_address)
       @status = "success"
     rescue ActiveRecord::RecordInvalid
       @status = "invalid input"
@@ -22,6 +24,6 @@ class PlacesController < ApplicationController
 
 
   def marker_params
-    params.permit(:marker)
+    params.permit(:marker, :reason, :address)
   end
 end
