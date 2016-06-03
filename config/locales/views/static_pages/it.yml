@@ -51,9 +51,35 @@ it:
     header:
       title: Conferma Partecipazione
       description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti utilizzando il codice di verifica inserito nell'invito.
+    validation_form:
+      title: Codice di Verifica
+      validation:
+        label: Codice di Verifica
+        placeholder: Inserisci il codice di Verifica
+      check: Verifica
     guest_form:
+      title: Nome Invitato
       name: Nome
       surname: Cognome
       add: Aggiungi
     invited_guests:
-      title: Ospiti Aggiunti
+      title: Invitati Aggiunti
+  playlist:
+    header:
+      title: Musica
+      description: Una band suonerà durante il nostro ricevimento, ma puoi suggerire qualche brano per il resto della festa.
+  gift:
+    header:
+      title: Lista nozze
+      description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrai farlo con una busta, un bonifico o una donazione Paypal.
+    iban:
+      title: IBAN
+      number: 12345678910
+  quotes:
+    party: Festa è partecipazione! Aiutateci a rendere ancora più speciale questo giorno unico della nostra vita e a costruire il nostro futuro.
+  trip:
+    header:
+      title: Viaggio di Nozze
+      description: Suggerisci una tappa del viaggio di nozze.
+    body:
+      content: Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante e ci penseremo noi a ritrovarli

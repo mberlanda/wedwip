@@ -2,9 +2,9 @@
   .container.wow.fadeIn
     .row
       .col-lg-12.text-center
-        %h2 Playlist
+        %h2= t('playlist.header.title')
         %hr.colored/
-        %h4 Una band suonerà durante il nostro ricevimento, ma puoi suggerire qualche brano per il resto della festa.
+        %p= t('playlist.header.description')
     .row.content-row
       .col-lg-12.text-center
-        %iframe{:allowtransparency => "true", :frameborder => "0", :height => "380", :src => "https://embed.spotify.com/?uri=spotify%3Auser%3A21id7v7gckz7ucdb7awgxuhvy%3Aplaylist%3A1bIonqPoosQOFRnydh9QRc", :width => "300"}
+        %iframe{:allowtransparency => "true", :frameborder => "0", :height => "380", :src => "https://embed.spotify.com/?uri=spotify%3Auser%3A21id7v7gckz7ucdb7awgxuhvy%3Aplaylist%3A1bIonqPoosQOFRnydh9QRc", :width => "380"}

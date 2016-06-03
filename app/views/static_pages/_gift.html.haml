@@ -2,13 +2,13 @@
   .container.text-center.wow.fadeIn
     .row
       .col-lg-12
-        %h2 Lista nozze
+        %h2= t('gift.header.title')
         %hr.colored
-        %p Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrai farlo con una busta, un bonifico o una donazione Paypal.
+        %p= t('gift.header.description')
     .row
       .col-lg-12
-        %h4 IBAN
-        %h4 12345678910
+        %h4= t('gift.iban.title')
+        %h4= t('gift.iban.number')
         %hr.colored
     .row
       = render partial:"donate_button"

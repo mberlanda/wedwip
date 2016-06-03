@@ -8,22 +8,22 @@
 
     .row.content-row#validation-form
       .col-lg-8.col-lg-offset-2
-        %span Codice di verifica
+        %span= t('participation.validation_form.title')
         .row.control-group
           .form-group.col-xs-12.floating-label-form-group.controls
-            %label Codice di verifica
-            %input#guest_validation.form-control{:placeholder => "Inserisci il codice di verifica", :type => "text"}/
+            %label= t('participation.validation_form.validation.label')
+            %input#guest_validation.form-control{:placeholder => t('participation.validation_form.validation.placeholder'), :type => "text"}/
             %p.help-block.text-danger
         .form-action
           .row
             %br
             .col-md-offset-3.col-md-12
-              = button_tag("#{t('participation.guest_form.add')}", id: "check-code", class: 'btn default')
+              = button_tag("#{t('participation.validation_form.check')}", id: "check-code", class: 'btn default')
         %p#error-validation.block{style:"color:red;"}        
 
     .row.content-row#participation-form
       .col-lg-8.col-lg-offset-2
-        %span Nome ospite
+        %span= t('participation.guest_form.title')
         %form#guestForm{:name => "guestForm", :novalidate => ""}
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
