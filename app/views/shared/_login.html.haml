@@ -2,23 +2,21 @@
   .container.wow.fadeIn
     .row
       .col-lg-12.text-center
-        %h2 Accedi
-        /%hr.colored/
-        /%p Accedi di seguito con le tue credenziali.
+        %h2= t('login.form.title')
     .row.content-row
       .col-lg-8.col-lg-offset-2
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: :loginForm, name: :loginForm }) do |f|
           = f.error_notification
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
-              = f.input :email, label: "Email", placeholder: "Email", input_html:{"data-validation-required-message" => "Please enter your email address.", :required => "", :type => "email", id: :email , class: "form-control"}
+              = f.input :email, label: t('login.form.email.label'), placeholder: t('login.form.email.placeholder'), input_html:{required: "", type: "email", id: :email , class: "form-control"}
               %p.help-block.text-danger
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
-              = f.input :password, label: "Password", placeholder: "Password", input_html:{"data-validation-required-message" => "Please enter your password.", :required => "", :type => "password", id: :password , class: "form-control"}
+              = f.input :password, label: t('login.form.password.label'), placeholder: t('login.form.password.placeholder'), input_html:{ required: "", type: "password", id: :password , class: "form-control"}
               %p.help-block.text-danger
           %br/
           #success
           .row
             .form-group.col-xs-12
-              = f.button :submit, "Entra", class: "btn btn-outline-dark"
+              = f.button :submit, t('login.form.submit'), class: "btn btn-outline-dark"

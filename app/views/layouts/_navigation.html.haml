@@ -19,23 +19,37 @@
 
           %li.hidden
             %a.page-scroll{ href: "#page-top" }
+
+          - if I18n.locale != :it
+            %li
+              = link_to t('navbar.language.ita'), {locale: :it}, class: 'page-scroll'
+          - if I18n.locale != :en
+            %li
+              = link_to t('navbar.language.eng'), {locale: :en}, class: 'page-scroll'
           %li
-            %a.page-scroll{ href: "#about" } About
+            %a.page-scroll{ href: "#about" }= t('navbar.about')
           %li
-            %a.page-scroll{ href: "#locations" } Locations
+            %a.page-scroll{ href: "#locations" }= t('navbar.locations')
           %li
-            %a.page-scroll{ href: "#participations" } Partecipa
+            %a.page-scroll{ href: "#participations" }= t('navbar.participations')
           %li
-            %a.page-scroll{ href: "#gift" } Regalo
+            %a.page-scroll{ href: "#gift" }= t('navbar.gift')
           %li
-            %a.page-scroll{ href: "#trip" } Luna di Miele
+            %a.page-scroll{ href: "#trip" }= t('navbar.trip')
     - else
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav.navbar-right
 
           %li.hidden
             %a.page-scroll{ href: "#page-top" }
+
+          - if I18n.locale != :it
+            %li
+              = link_to t('navbar.language.ita'), {locale: :it}, class: 'page-scroll'
+          - if I18n.locale != :en
+            %li
+              = link_to t('navbar.language.eng'), {locale: :en}, class: 'page-scroll'
           %li
-            %a.page-scroll{ href: "#login" } Login
+            %a.page-scroll{ href: "#login" }= t('navbar.login')
           %li
-            %a.page-scroll{ href: "#register" } Sign Up
+            %a.page-scroll{ href: "#register" }= t('navbar.register')
