@@ -68,12 +68,15 @@ function processAndDrawMap(){
         position: place.geometry.location
       };
 
+      var fullAddress = place.formatted_address;
+
       $('#suggestionTitle').html(place.name);
       $('#searchMapModal').modal('show');
       $('#suggestion-submit').click(function(){
+          var reason = $("#suggestion-reason").val();
 
           markers.push(new google.maps.Marker(marker));
-          createMarker(marker);
+          createMarker(marker, reason, fullAddress);
           if (place.geometry.viewport) {
           // Only geocodes have viewport.
           bounds.union(place.geometry.viewport);
@@ -88,7 +91,7 @@ function processAndDrawMap(){
   });
 }
 
-function createMarker(item){
+function createMarker(item, text, address){
 
   var request = $.ajax({
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -97,11 +100,13 @@ function createMarker(item){
     type: "POST",
     quietMillis: 200,
     data: { marker: JSON.stringify(item, function(key,value){
-        if(key == "map"){
-            return undefined;
-        }
-        return value;
-      })}
+              if(key == "map"){
+                  return undefined;
+              }
+              return value;
+              }),
+            reason: text,
+            address: address }
     });
 
   request.done(function(data){
