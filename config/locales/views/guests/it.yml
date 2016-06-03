@@ -1,0 +1,11 @@
+it:
+  guest_table:
+    title: Lista Ospiti
+    description: Ecco la lista di chi ha confermato fino ad ora
+    table:
+      headers:
+        name: Nome
+        surname: Cognome
+        email: Email
+        created_at: Data Creazione
+        updated_at: Data Ultima Modifica
