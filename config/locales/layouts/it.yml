@@ -7,6 +7,7 @@ it:
     trip: Luna di Miele
     login: Accedi
     register: Registrati
+    home: Home
     language:
       choose: Scegli Lingua
       ita: Italiano
