@@ -1,6 +1,5 @@
 it:
   header:
-  header:
     text-primary: Mauro e Beatrice
     quote: Con grande gioia annunciano il loro matrimonio
     buttons:
@@ -75,8 +74,6 @@ it:
     iban:
       title: IBAN
       number: 12345678910
-  quotes:
-    party: Festa è partecipazione! Aiutateci a rendere ancora più speciale questo giorno unico della nostra vita e a costruire il nostro futuro.
   trip:
     header:
       title: Viaggio di Nozze
@@ -93,3 +90,12 @@ it:
     button:
       submit: Conferma
       cancel: Annulla
+  quotes:
+    party: Festa è partecipazione! Aiutateci a rendere ancora più speciale questo giorno unico della nostra vita e a costruire il nostro futuro.
+    benigni: "Iniziare un nuovo cammino spaventa. Ma dopo ogni passo che percorriamo ci rendiamo conto di come era pericoloso rimanere fermi" Roberto Benigni
+    gibran: "Una delle cose più belle nella vita, è trovare qualcuno che riesca a capirti, senza il bisogno di dare tante spiegazioni!" Kahlil Gibran
+    schopenhauer: "La vita e i sogni sono fogli di uno stesso libro: leggerli in ordine è vivere, sfogliarli a caso è sognare" Arthur Schopenhauer
+    twain: "Da a ogni giornata la possibilità di essere la più bella della tua vita" Mark Twain
+    seneca: "Chi non vive per un'altra persona non vive neppure per se stesso" Seneca
+    wek: "Bisogna sempre puntare alla luna, mal che vada si è comunque arrivati in mezzo alle stelle" Alek Wek
+    roosevelt: "Il futuro appartiene a coloro che credono nella bellezza dei propri sogni" Eleanor Roosevelt
