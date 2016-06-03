@@ -1,9 +1,0 @@
-it:
-  user:
-    attributes:
-      email:
-        blank: L'email non può essere vuota
-        invalid: Email non valida
-      password:
-        blank: La password non può essere vuota
-        too_short: La password è troppo corta 
