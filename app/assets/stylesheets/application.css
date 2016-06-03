@@ -54,3 +54,26 @@
       background-attachment: fixed;
     }
   }
+
+  .portfolio-modal .custom-modal-content {
+  color: #222222;
+  background: transparent;
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  min-height: 100%;
+  padding: 100px 0;
+  text-align: center;
+}
+.portfolio-modal .custom-modal-content h2 {
+  margin: 0;
+  font-size: 46px;
+}
+.portfolio-modal .custom-modal-content img {
+  margin: 30px auto;
+}
+.portfolio-modal .custom-modal-content .item-details {
+  margin: 30px 0;
+}

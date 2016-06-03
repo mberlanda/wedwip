@@ -82,4 +82,14 @@ it:
       title: Viaggio di Nozze
       description: Suggerisci una tappa del viaggio di nozze.
     body:
-      content: Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante e ci penseremo noi a ritrovarli
+      content: Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante e ci penseremo noi a ritrovarli.
+  search_map:
+    header:
+      title: Nome Posto
+      description: Perché ci consigli questo posto?
+    reason:
+      label: Motivo
+      placeholder: Inserisci il motivo per cui suggerisci questo posto
+    button:
+      submit: Conferma
+      cancel: Annulla

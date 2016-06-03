@@ -45,12 +45,10 @@ function processAndDrawMap(){
       return;
     }
 
-    // Clear out the old markers.
-    //markers.forEach(function(marker) {
-    //  marker.setMap(null);
-    //});
-    //markers = [];
-
+    if (places.length >1){
+      // If the result is more than one place, take the first only
+      places = [ places[0] ]
+    }
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
@@ -68,20 +66,25 @@ function processAndDrawMap(){
         icon: icon,
         title: place.name,
         position: place.geometry.location
-      }
+      };
 
-      markers.push(new google.maps.Marker(marker));
+      $('#suggestionTitle').html(place.name);
+      $('#searchMapModal').modal('show');
+      $('#suggestion-submit').click(function(){
 
-      createMarker(marker);
+          markers.push(new google.maps.Marker(marker));
+          createMarker(marker);
+          if (place.geometry.viewport) {
+          // Only geocodes have viewport.
+          bounds.union(place.geometry.viewport);
+          } else {
+          bounds.extend(place.geometry.location);
+          }
+      });
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
     });
-    map.fitBounds(bounds);
+
+    // map.fitBounds(bounds);
   });
 }
 

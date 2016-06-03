@@ -1,0 +1,69 @@
+/ CSS for responsive embed-container
+:css
+  .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/ Church Modal
+#churchMap.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centeredv
+              = render partial: 'static_pages/maps/church'
+
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+          %i.fa.fa-times
+          Close
+/ Restaurant Modal
+#restaurantMap.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            %img.img-responsive.img-centeredv
+              = render partial: 'static_pages/maps/restaurant'
+
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+          %i.fa.fa-times
+          Close
+/ Map Search Modal
+#searchMapModal.portfolio-modal.modal.fade{"aria-hidden" => "true", :role => "dialog", :tabindex => "-1"}
+  .custom-modal-content
+    .close-modal{"data-dismiss" => "modal"}
+      .lr
+        .rl
+    .modal-body.bg-gray
+      %section
+        .container.wow.fadeIn
+          .row
+            .col-lg-12.text-center.body.vintage
+              %h2#suggestionTitle= t('search_map.header.title')
+              %hr.colored/
+              %h4= t('search_map.header.description') 
+          .row.content-row
+            %form#suggestionForm{:name => "suggestionForm", :novalidate => ""}
+              .row.control-group
+                .form-group.col-xs-12.floating-label-form-group.controls
+                  %label= t('search_map.reason.label')
+                  %textarea#suggestion-reason.form-control{"aria-invalid" => "false", :placeholder => "#{t('search_map.reason.placeholder')}", :required => "", :rows => "5"}
+                  %p.help-block.text-danger
+          .row
+            %p#suggestion-error.block{style:"color:red;"}
+          .row
+            .col-md-12
+              .col-md-6 
+                %button#suggestion-submit.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                  %i.fa.fa-times
+                  = t('search_map.button.submit')
+              .col-md-6
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+                  %i.fa.fa-times
+                  = t('search_map.button.cancel')
