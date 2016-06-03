@@ -1,7 +1,10 @@
 it:
   header:
-    date: 1 Ottobre 2016
-    button: Scopri
+  header:
+    text-primary: Mauro e Beatrice
+    quote: Con grande gioia annunciano il loro matrimonio
+    buttons:
+      more: Scopri
   about:
     header:
       title: Il nostro matrimonio

@@ -1,9 +1,26 @@
 var guestList = <%= @guests.to_json.html_safe %>;
-var validationKey = "e5d272873508422db558acb2e76f1c281e7f76e41f58a024519272cdabce15e59ae6e1e0d1fa850951af51c18ce751d8782f71f24bc09458b2accc47705defbe";
+var validationKey = "e0d67e387659dc93136877f61d49bc33ad5568d03b2a4b887d2e81403c26bc0ea11677b2296d09629a1b3527a90dca4e4b235f882e3327e9c9e1db9815549cbc";
 
 $(document).ready(function() {
-  renderGuestsTable();
+  $("#participation-form").hide();
 });
+
+
+$("#check-code").click(function(){
+
+  var validationCode = $("#guest_validation").val().trim().encrypt();
+
+  if (validationCode === validationKey) {
+
+    $("#validation-form").hide();
+    $("#participation-form").show();
+    renderGuestsTable();
+    return;
+  }
+
+  $("#error-validation").html("Il codice di verifica inserito non è corretto");
+
+})
 
 $("#add-guest").click(function() {
   
@@ -11,14 +28,8 @@ $("#add-guest").click(function() {
   $("#success-input").html("");
 
   var name = $("#guest_name").val().trim().toLowerCase().capitalize(),
-      surname = $("#guest_surname").val().trim().toLowerCase().capitalize(),
-      validationCode = $("#guest_validation").val().trim().encrypt();
+      surname = $("#guest_surname").val().trim().toLowerCase().capitalize();
   
-  if (validationCode != validationKey) {
-    $("#error-input").html("Il codice di verifica inserito non è corretto");
-    return;
-  }
-
   if (name === "" || surname  === "") {
     $("#error-input").html("Tutti i campi devono essere compilati");
     return;

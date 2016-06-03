@@ -6,7 +6,7 @@
         %hr.colored/
         %p= t('participation.header.description')
 
-    .row.content-row
+    .row.content-row#validation-form
       .col-lg-8.col-lg-offset-2
         %span Codice di verifica
         .row.control-group
@@ -14,7 +14,14 @@
             %label Codice di verifica
             %input#guest_validation.form-control{:placeholder => "Inserisci il codice di verifica", :type => "text"}/
             %p.help-block.text-danger
-    .row.content-row
+        .form-action
+          .row
+            %br
+            .col-md-offset-3.col-md-12
+              = button_tag("#{t('participation.guest_form.add')}", id: "check-code", class: 'btn default')
+        %p#error-validation.block{style:"color:red;"}        
+
+    .row.content-row#participation-form
       .col-lg-8.col-lg-offset-2
         %span Nome ospite
         %form#guestForm{:name => "guestForm", :novalidate => ""}
