@@ -1,0 +1,15 @@
+/ Instructions: Set your background image using the URL below.
+%header{ style: "background-image: url(#{asset_path('img/valdemossa.jpg')})" }
+  %aside.header-quote
+    .container.wow.fadeIn
+      .row
+        .col-md-10.col-md-offset-1
+          %span.quote
+            %span.text-primary= t('header.text-primary')
+          %hr.colored
+          %span.quote= t('header.quote')
+          %br
+
+  .scroll-down
+    %a.btn.page-scroll{ href: "#guest_table" }
+      %i.fa.fa-angle-down.fa-fw

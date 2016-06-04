@@ -1,0 +1,23 @@
+%section#place_table.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2= t('place_table.title')
+        %hr.colored/
+        %p= t('place_table.description')
+    .row
+      %br/
+    .row
+      .table-responsive
+        %table.table.table-striped#places
+          %thead
+            %tr
+              %th= t('place_table.table.headers.address')
+              %th= t('place_table.table.headers.reason')
+              %th= t('place_table.table.headers.email')
+          %tbody
+            - @places.each do |p|
+              %tr
+                %td= p.address
+                %td= p.reason
+                %td= p.user.email

@@ -1,0 +1,11 @@
+it:
+  place_table:
+    title: Lista Posti Suggeriti
+    description: Ecco la lista dei posti da visitare suggeriti fino ad ora
+    table:
+      headers:
+        address: Indirizzo
+        reason: Motivo
+        email: Email
+        created_at: Data Creazione
+        updated_at: Data Ultima Modifica
