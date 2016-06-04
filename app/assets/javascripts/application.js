@@ -11,12 +11,12 @@
 // about supported directives.
 //
 
-String.prototype.capitalize = function(){
-  return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+function capitalize(string){
+  return string.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
 };
-  
-String.prototype.supplant = function (o) {
-  return this.replace(/{([^{}]*)}/g,
+
+function supplant(string, o){
+  return string.replace(/{([^{}]*)}/g,
     function (a, b) {
       var r = o[b];
       return typeof r === "string" || typeof r === "number" ? r : a;
@@ -24,6 +24,6 @@ String.prototype.supplant = function (o) {
   );
 };
 
-String.prototype.encrypt = function(){
-  return hex_sha512( this.toLowerCase() ) ;
-  };
+function encrypt(string){
+  return hex_sha512( string.toLowerCase() ) ;
+}

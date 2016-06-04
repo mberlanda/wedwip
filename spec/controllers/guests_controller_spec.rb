@@ -14,7 +14,7 @@ RSpec.describe GuestsController, type: :controller do
     result = JSON.parse(response.body)
     expect(result["status"]).to eq("success")
     expect(Guest.count).to eq( guests_count + 1 )
-   end
+  end
 
   it "should not duplicate guests" do
 
