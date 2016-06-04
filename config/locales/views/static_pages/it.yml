@@ -7,13 +7,13 @@ it:
   about:
     header:
       title: Il nostro matrimonio
-      description: In questo sito troverete tutte le informazioni riguardanti il nostro matrimonio che si terrà Sabato 1 Ottobre 2016.
+      description: Sabato 1 Ottobre 2016.
     participation:
       title: Conferma Presenza
-      description: In questa sezione potrete trovare le informazioni sui luoghi in cui si svolgerà la giornata e confermare la vostra presenza.
+      description: Trovate i dettagli sui luoghi in cui si svolgerà la giornata e confermate la vostra presenza.
     gift:
       title: Festa e Lista Nozze
-      description: In questa sezione potrete suggerirci musica per la festa e tappe per il viaggio di nozze, caricare foto e farci un regalo. 
+      description: Suggeriteci musica per la festa e tappe per il viaggio di nozze, caricate foto e fateci un regalo. 
   locations:
     map: Mappa
     header:
@@ -80,7 +80,7 @@ it:
   gift:
     header:
       title: Lista nozze
-      description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrai farlo con una busta, un bonifico o una donazione Paypal.
+      description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrete farlo con una busta, un bonifico o Paypal.
     iban:
       title: IBAN
       number: 12345678910
