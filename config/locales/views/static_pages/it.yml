@@ -7,16 +7,13 @@ it:
   about:
     header:
       title: Il nostro matrimonio
-      description: In questo sito troverai tutte le informazioni riguardanti il nostro matrimonio che si terrà l'1 Ottobre 2016.
+      description: In questo sito troverete tutte le informazioni riguardanti il nostro matrimonio che si terrà Sabato 1 Ottobre 2016.
     participation:
       title: Conferma Presenza
-      description: In questa sezione potrai trovare le informazioni sulle location e confermare la presenza tua e dei tuoi invitati.
-    location:
-      title: Locations
-      description: Indicazioni su come raggiungere la cattedrale e il luogo del ricevimento.
+      description: In questa sezione potrete trovare le informazioni sui luoghi in cui si svolgerà la giornata e confermare la vostra presenza.
     gift:
       title: Festa e Lista Nozze
-      description: In questa sezione potrete farci un regalo, suggerirci tappe per il viaggio di nozze, musica per la festa e caricare foto.
+      description: In questa sezione potrete suggerirci musica per la festa e tappe per il viaggio di nozze, caricare foto e farci un regalo. 
   locations:
     map: Mappa
     header:
@@ -48,25 +45,38 @@ it:
         city: 24020 Scanzorosciate BG
   participation:
     header:
-      title: Conferma Partecipazione
-      description: Conferma di seguito la tua partecipazione e quella dei tuoi ospiti utilizzando il codice di verifica inserito nell'invito.
+      title: Conferma Presenza
+      description: Confermate di seguito la vostra presenza inserendo il codice fornitovi nell'invito.
     validation_form:
-      title: Codice di Verifica
+      title: Codice di Conferma Presenza
       validation:
-        label: Codice di Verifica
-        placeholder: Inserisci il codice di Verifica
+        label: Codice di Conferma Presenza
+        placeholder: Inserite il codice di Codice di Conferma Presenza
       check: Verifica
     guest_form:
       title: Nome Invitato
       name: Nome
       surname: Cognome
-      add: Aggiungi
+      add: Conferma
     invited_guests:
-      title: Invitati Aggiunti
+      title: Invitati Confermati
+  faq:
+    header:
+      title: FAQ
+      description: Alcune indicazioni utili sulla giornata.
+    parking:
+      title: Parcheggio
+      description: In prossimità della Chiesa non sarà possibile parcheggiare. Potete fare riferimento ai seguenti parcheggi nei dintorni.
+    hospitality:
+      title: Alloggio
+      description: Quanto prima cercheremo di dare indicazioni su dove allogiare a buon prezzo.
+    carsharing:
+      title: Passaggi in Auto
+      description: Non siete automuniti? Segnalateci il vostro bisogno. Potete dare un passaggio? Indicateci la vostra disponibilità.
   playlist:
     header:
       title: Musica
-      description: Una band suonerà durante il nostro ricevimento, ma puoi suggerire qualche brano per il resto della festa.
+      description: Una band suonerà durante il nostro ricevimento, ma potete suggerire qualche brano per il resto della serata.
   gift:
     header:
       title: Lista nozze
@@ -77,7 +87,7 @@ it:
   trip:
     header:
       title: Viaggio di Nozze
-      description: Suggerisci una tappa del viaggio di nozze.
+      description: Suggerite una tappa del viaggio di nozze.
     body:
       content: Nel corso delle prime due settimane di Ottobre faremo un giro della Penisola. Consigliateci hotel, ristoranti, posti da vedere semplicemente cercandoli nella mappa qui sottostante e ci penseremo noi a ritrovarli.
   search_map:

@@ -1,0 +1,24 @@
+// parcheggio, carsharing, dormire
+%section#faq.bg-gray
+  .container-fluid
+    .row.text-center
+      .col-lg-12.wow.fadeIn
+        %h1= t('faq.header.title')
+        %hr.colored
+        %p= t('faq.header.description')
+    .row.text-center
+      .col-md-4.col-sm-4#parking
+        .about-content.wow.fadeIn{ "data-wow-delay" => ".2s" }
+          %i.fa.fa-car.fa-4x
+          %h3= t('faq.parking.title')
+          %p= t('faq.parking.description')
+      .col-md-4.col-sm-4#hospitality
+        .about-content.wow.fadeIn{ "data-wow-delay" => ".4s" }
+          %i.fa.fa-bed.fa-4x
+          %h3= t('faq.hospitality.title')
+          %p= t('faq.hospitality.description')
+      .col-md-4.col-sm-4#parking
+        .about-content.wow.fadeIn{ "data-wow-delay" => ".6s" }
+          %i.fa.fa-taxi.fa-4x
+          %h3= t('faq.parking.title')
+          %p= t('faq.parking.description')

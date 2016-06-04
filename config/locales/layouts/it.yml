@@ -8,6 +8,8 @@ it:
     login: Accedi
     register: Registrati
     home: Home
+    faq: FAQ
+    playlist: Musica
     language:
       choose: Scegli Lingua
       ita: Italiano
