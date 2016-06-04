@@ -7,6 +7,10 @@ script:
   - bundle exec rake
 before_script:
   - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database strano_test' -U postgres
+  - psql -c 'create database travis_ci_test' -U postgres
+services:
+  - postgresql
+addons:
+  postgresql: "9.4"
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec
