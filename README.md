@@ -2,6 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e997b7a95b0b4a3096d7291bfcac6ce7)](https://www.codacy.com/app/m-berlanda/wedwip?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mberlanda/wedwip&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/mberlanda/wedwip/badges/gpa.svg)](https://codeclimate.com/github/mberlanda/wedwip)
+[![Build Status](https://travis-ci.org/mberlanda/wedwip.svg?branch=master)](https://travis-ci.org/mberlanda/wedwip)
 
 The purpose of this application is to create a template for a wedding website.
 

@@ -1,0 +1,11 @@
+en:
+  place_table:
+    title: Suggested Places List
+    description: The list of place to visit suggested so far
+    table:
+      headers:
+        address: Address
+        reason: Reason
+        email: Email
+        created_at: Created At
+        updated_at: Updated At

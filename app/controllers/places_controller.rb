@@ -2,6 +2,10 @@ class PlacesController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+    @places = Place.includes(:user).all
+  end
+
   def create
     
     begin
