@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 $("#check-code").click(function(){
 
-  var validationCode = $("#guest_validation").val().trim().encrypt();
+  var validationCode = encrypt( $("#guest_validation").val().trim() );
 
   if (validationCode === validationKey) {
 
@@ -27,8 +27,8 @@ $("#add-guest").click(function() {
   $("#error-input").html("");
   $("#success-input").html("");
 
-  var name = $("#guest_name").val().trim().toLowerCase().capitalize(),
-      surname = $("#guest_surname").val().trim().toLowerCase().capitalize();
+  var name = capitalize( $("#guest_name").val().trim().toLowerCase() ),
+      surname = capitalize(  $("#guest_surname").val().trim().toLowerCase() );
   
   if (name === "" || surname  === "") {
     $("#error-input").html("Tutti i campi devono essere compilati");
@@ -47,13 +47,14 @@ $("#add-guest").click(function() {
     }
   });
   if (found) {
-    $("#error-input").html("{name} {surname} è già stato inserito".supplant(item));
+    var error_template = "{name} {surname} è già stato inserito";
+    $("#error-input").html(supplant(error_template, item));
     return;
   }
 
   createGuest(item);
-  
-  $("#success-input").html("{name} {surname} è stato inserito con successo".supplant(item));
+  var success_template = "{name} {surname} è stato inserito con successo";
+  $("#success-input").html(supplant(success_template, item));
 })
 
 function createGuest(item){
@@ -68,9 +69,6 @@ function createGuest(item){
     });
 
   request.done(function(data){
-      if (data["status"] == "success"){
-        console.log(data["guest_list"]);      
-      }
       guestList = JSON.parse(data["guest_list"]);
       renderGuestsTable();
   });
