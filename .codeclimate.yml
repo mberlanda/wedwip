@@ -4,6 +4,9 @@ engines:
     enabled: true
   bundler-audit:
     enabled: true
+    # Insecure Source URI found: git://github.com/fnando/i18n-js.git
+    exclude_fingerprints:
+    - 7662c978990089913072d101c8ad9811
   csslint:
     enabled: true
   duplication:
