@@ -13,7 +13,7 @@
 
 function capitalize(string){
   return string.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
-};
+}
 
 function supplant(string, o){
   return string.replace(/{([^{}]*)}/g,
@@ -22,7 +22,7 @@ function supplant(string, o){
       return typeof r === "string" || typeof r === "number" ? r : a;
     }
   );
-};
+}
 
 function encrypt(string){
   return hex_sha512( string.toLowerCase() ) ;
