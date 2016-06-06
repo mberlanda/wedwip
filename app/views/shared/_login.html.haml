@@ -3,9 +3,12 @@
     .row
       .col-lg-12.text-center
         %h2= t('login.form.title')
+    .row.content-row#flash
+      .col-lg-8.col-lg-offset-2
+        = render partial: 'shared/flash_messages'
     .row.content-row
       .col-lg-8.col-lg-offset-2
-        = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: :loginForm, name: :loginForm }) do |f|
+        = simple_form_for(resource, as: resource_name, url: "#{session_path(resource_name)}#login", html: { id: :loginForm, name: :loginForm }) do |f|
           = f.error_notification
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls

@@ -1,0 +1,5 @@
+- flash.each do |flash_type, message|
+  %div{ class: "alert #{alert_class(flash_type)} alert-dismissable" }
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#", :title => "close"} ×
+    %strong Attenzione!
+    = message

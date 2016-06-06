@@ -5,7 +5,7 @@ describe "Signup" do
   
   it "should not create users with invalid signup information" do
 
-    get new_user_registration_path
+    get new_user_session_path
     count_before = User.count
     post user_registration_path, user: { 
                              email: "user@invalid",
@@ -16,7 +16,7 @@ describe "Signup" do
 
   it "should create users with valid signup information" do
 
-    get new_user_registration_path
+    get new_user_session_path
     count_before = User.count
     post user_registration_path, user: {
                              email: "user@valid.info",

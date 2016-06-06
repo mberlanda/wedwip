@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|it/ do
 
-    devise_for :users
+    devise_for :users, :skip => [:registrations]
+    as :user do
+      post 'user/create' => 'devise/registrations#create', :as => 'user_registration'            
+    end
     root 'static_pages#home'
     resources :guests, only: [:index]
     resources :places, only: [:index]
