@@ -16,6 +16,7 @@ gem 'simple_form'
 gem 'i18n-js', github: 'fnando/i18n-js'
 gem 'devise'
 
+gem 'react-rails'
 gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
 # gem 'jquery-rails' # Use jquery as the JavaScript library
 # gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
