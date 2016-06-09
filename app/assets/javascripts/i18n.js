@@ -38,6 +38,47 @@
     return ("0" + number.toString()).substr(-2);
   };
 
+  // Improved toFixed number rounding function with support for unprecise floating points
+  // JavaScript's standard toFixed function does not round certain numbers correctly (for example 0.105 with precision 2).
+  var toFixed = function(number, precision) {
+    return decimalAdjust('round', number, -precision).toFixed(precision);
+  };
+
+  // Is a given variable an object?
+  // Borrowed from Underscore.js
+  var isObject = function(obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  };
+
+  // Is a given value an array?
+  // Borrowed from Underscore.js
+  var isArray = function(obj) {
+    if (Array.isArray) {
+      return Array.isArray(obj);
+    };
+    return Object.prototype.toString.call(obj) === '[object Array]';
+  };
+
+  var decimalAdjust = function(type, value, exp) {
+    // If the exp is undefined or zero...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // If the value is not a number or the exp is not an integer...
+    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+      return NaN;
+    }
+    // Shift
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Shift back
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
+
   // Set default days/months translations.
   var DATE = {
       day_names: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -86,7 +127,7 @@
     , locale: "en"
     // Set the translation key separator.
     , defaultSeparator: "."
-    // Set the placeholder format. Accepts `{{placeholder}}` and `%{placeholder}`.}
+    // Set the placeholder format. Accepts `{{placeholder}}` and `%{placeholder}`.
     , placeholder: /(?:\{\{|%\{)(.*?)(?:\}\}?)/gm
     // Set if engine should fallback to the default locale when a translation
     // is missing.
@@ -150,6 +191,12 @@
 
     if (typeof(this.translations) === "undefined" && this.translations !== null)
       this.translations = DEFAULT_OPTIONS.translations;
+      
+    if (typeof(this.missingBehaviour) === "undefined" && this.missingBehaviour !== null)
+      this.missingBehaviour = DEFAULT_OPTIONS.missingBehaviour;
+
+    if (typeof(this.missingTranslationPrefix) === "undefined" && this.missingTranslationPrefix !== null)
+      this.missingTranslationPrefix = DEFAULT_OPTIONS.missingTranslationPrefix;
   };
   I18n.initializeOptions();
 
@@ -179,7 +226,7 @@
       result = result(locale);
     }
 
-    if (result instanceof Array === false) {
+    if (isArray(result) === false) {
       result = [result];
     }
 
@@ -408,7 +455,7 @@
 
     if (typeof(translation) === "string") {
       translation = this.interpolate(translation, options);
-    } else if (translation instanceof Object && this.isSet(options.count)) {
+    } else if (isObject(translation) && this.isSet(options.count)) {
       translation = this.pluralize(options.count, translation, options);
     }
 
@@ -438,9 +485,9 @@
       if (this.isSet(options[name])) {
         value = options[name].toString().replace(/\$/gm, "_#$#_");
       } else if (name in options) {
-        value = this.nullPlaceholder(placeholder, message);
+        value = this.nullPlaceholder(placeholder, message, options);
       } else {
-        value = this.missingPlaceholder(placeholder, message);
+        value = this.missingPlaceholder(placeholder, message, options);
       }
 
       regex = new RegExp(placeholder.replace(/\{/gm, "\\{").replace(/\}/gm, "\\}"));
@@ -457,7 +504,7 @@
     options = this.prepareOptions(options);
     var translations, pluralizer, keys, key, message;
 
-    if (scope instanceof Object) {
+    if (isObject(scope)) {
       translations = scope;
     } else {
       translations = this.lookup(scope, options);
@@ -502,7 +549,7 @@
   };
 
   // Return a missing placeholder message for given parameters
-  I18n.missingPlaceholder = function(placeholder, message) {
+  I18n.missingPlaceholder = function(placeholder, message, options) {
     return "[missing " + placeholder + " value]";
   };
 
@@ -529,7 +576,7 @@
     );
 
     var negative = number < 0
-      , string = Math.abs(number).toFixed(options.precision).toString()
+      , string = toFixed(Math.abs(number), options.precision).toString()
       , parts = string.split(".")
       , precision
       , buffer = []
@@ -730,6 +777,10 @@
     }
 
     options = this.prepareOptions(options, DATE);
+
+    if (isNaN(date.getTime())) {
+      throw new Error('I18n.strftime() requires a valid date object, but received an invalid date.');
+    }
 
     var weekDay = date.getDay()
       , day = date.getDate()

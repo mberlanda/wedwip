@@ -7,9 +7,9 @@ window.ValidationFormInput = React.createClass
 
   render: ->
     formInput
-      id: '<%= t('participation.validation_form.title') %>'
-      label: '<%= t('participation.validation_form.title') %>'
-      placeholder: '<%= t('participation.validation_form.title') %>'
+      id: 'prova'
+      label: 'prova'
+      placeholder: I18n.t('participation.validation_form.validation.placeholder')
       type: 'text'
             
 validationFormInput = React.createFactory(ValidationFormInput)

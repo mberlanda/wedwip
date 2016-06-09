@@ -65,3 +65,8 @@ rails generate devise MODEL
 ```
 https://elements.heroku.com/addons/cloudmailin
 ```
+
+### I18n
+```
+rake i18n:js:export
+```

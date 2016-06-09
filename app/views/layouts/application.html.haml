@@ -5,11 +5,11 @@
 %html{lang:"it"}
   <!--<![endif]-->
   %head
-    
     %meta{charset:"utf-8"}/
     %meta{content: "width=device-width, initial-scale=1.0, user-scalable=no", name: "viewport"}/
     %meta{content:"", name:"description"}/
     %meta{content:"", name:"author"}/
+    %meta{content: I18n.locale , name:"locale"}
     -if content_for?(:page_title)
       = yield :page_title
     -else
@@ -27,5 +27,8 @@
     = yield
 
     = render partial: 'layouts/javascripts'
+    %script{type: "text/javascript"}
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
     -if content_for?(:page_javascript)
       =yield :page_javascript
