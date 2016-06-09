@@ -1,35 +1,15 @@
-DOM = React.DOM
-
-ValidationForm = React.createClass
+window.ValidationFormInput = React.createClass
+  displayName: "ValidationFormInput"
+  
+  getInitialState: ->
+    {
+    }
 
   render: ->
-    DOM.div
-      id: 'validation-form'
-      DOM.div
-        className: 'col-lg-8 col-lg-offset-2'
-        DOM.span
-          'Title'
-          
-        formInput
-          id: 'an_id'
-          label: 'a lable'
-          placeholder: 'a placeholder'
-          type: 'text'
-
-        DOM.div
-          className: 'form-action'
-          DOM.div
-            className: 'row'
-            DOM.br
-            DOM.div
-              className: 'col-md-offset-3 col-md-12'
-              DOM.button
-                id: 'check-code'
-                className: 'btn default'
-                'button'
-
-          DOM.p
-            id: 'error-validation'
-            style: 'color:red;'
-
-validationForm = React.createFactory(validationForm)
+    formInput
+      id: '<%= t('participation.validation_form.title') %>'
+      label: '<%= t('participation.validation_form.title') %>'
+      placeholder: '<%= t('participation.validation_form.title') %>'
+      type: 'text'
+            
+validationFormInput = React.createFactory(ValidationFormInput)

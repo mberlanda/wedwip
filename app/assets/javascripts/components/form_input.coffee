@@ -17,5 +17,5 @@ FormInput = React.createClass
           type: @props.type
         DOM.p
           className: 'help-block text-danger'
-            
-formInput = React.createFactory(FormInput)
+
+window.formInput = React.createFactory(FormInput)
