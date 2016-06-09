@@ -30,5 +30,5 @@ function supplant(string, o){
 }
 
 function encrypt(string){
-  return hex_sha512( string.toLowerCase() ) ;
+  return hex_sha512( string.toLowerCase().trim() ) ;
 }

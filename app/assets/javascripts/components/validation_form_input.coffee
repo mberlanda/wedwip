@@ -1,4 +1,5 @@
 DOM = React.DOM
+validationKey = 'e0d67e387659dc93136877f61d49bc33ad5568d03b2a4b887d2e81403c26bc0ea11677b2296d09629a1b3527a90dca4e4b235f882e3327e9c9e1db9815549cbc'
 
 window.ValidationFormInput = React.createClass
   displayName: "ValidationFormInput"
@@ -14,6 +15,13 @@ window.ValidationFormInput = React.createClass
   validationCodeChanged: (event) ->
     @state.validation.text = event.target.value
     @forceUpdate()
+
+  validateInsertedCode: () ->
+    if encrypt(@state.validation.text) == validationKey
+      @state.validation.success = true
+      @forceUpdate()
+    else
+      $('#error-validation').html 'Il codice di verifica inserito non è corretto'
 
   render: ->
     DOM.section
@@ -54,11 +62,12 @@ window.ValidationFormInput = React.createClass
                       DOM.button
                         id: "check-code"
                         className: 'btn default'
-                        onClick: () =>
-                          console.log(@state.validation.text)
+                        onClick: @validateInsertedCode
                         I18n.t('participation.validation_form.check')
               DOM.p
                 id: 'error-validation'
                 style: { color: 'red' }
+
+        else
 
 validationFormInput = React.createFactory(ValidationFormInput)
