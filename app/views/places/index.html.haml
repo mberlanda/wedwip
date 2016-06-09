@@ -1,5 +1,12 @@
 = render partial: 'header'
 = render partial: 'places_table'
 
+= react_component('PlacesFormInput', {id: "a", label: "label", placeholder: "placeholder", type: "text"}, {class: "container"})
+
+
+- provide :page_javascript do
+  :coffee
+    #{render(partial: 'static_pages/components/validation_form.coffee')}
+
 - provide :page_title do
   %title Mauro e Beatrice | Suggested Place List
