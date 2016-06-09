@@ -15,6 +15,7 @@ FormInput = React.createClass
           className: 'form-control'
           placeholder: @props.placeholder
           type: @props.type
+          onChange: @props.onChange
         DOM.p
           className: 'help-block text-danger'
 

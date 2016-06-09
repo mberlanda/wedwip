@@ -1,12 +1,7 @@
 = render partial: 'header'
 = render partial: 'places_table'
-
-= react_component('ValidationFormInput', {}, {class: "container"})
-
-
-- provide :page_javascript do
-  :javascript
-  =  'static_pages/javascript/set_locale.js'
+.form-container
+= react_component('ValidationFormInput', {}, {class: "form-container"})
 
 - provide :page_title do
   %title Mauro e Beatrice | Suggested Place List
