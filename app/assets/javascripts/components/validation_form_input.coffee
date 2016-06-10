@@ -10,17 +10,30 @@ window.ValidationFormInput = React.createClass
         success: false
         text: null
       }
+      alert: {
+        type: null
+        message: null
+      }
     }
+
+  cleanAlerts:() ->
+    @state.alert.type = null
+    @state.alert.message = null
+    @forceUpdate()
 
   validationCodeChanged: (event) ->
     @state.validation.text = event.target.value
+    @cleanAlerts()  
     @forceUpdate()
 
-  validateInsertedCode: () ->
-    if encrypt(@state.validation.text) == validationKey
+  validateInsertedCode: () -> 
+    if encrypt(@state.validation.text || '') == validationKey
       @state.validation.success = true
       @forceUpdate()
     else
+      @state.alert.type = 'alert-danger'
+      @state.alert.message = 'Il codice di verifica inserito non è corretto'
+      @forceUpdate()
       $('#error-validation').html 'Il codice di verifica inserito non è corretto'
 
   render: ->
@@ -44,6 +57,10 @@ window.ValidationFormInput = React.createClass
             className: 'row content-row'
             DOM.div
               className: 'col-lg-8 col-lg-offset-2'
+              unless @state.alert.type == null
+                alertBox
+                  alert_type: @state.alert.type
+                  message: @state.alert.message
               DOM.span
                 I18n.t('participation.validation_form.title')
               formInput
@@ -69,5 +86,7 @@ window.ValidationFormInput = React.createClass
                 style: { color: 'red' }
 
         else
+          alertBox
+            message: "This should work"
 
 validationFormInput = React.createFactory(ValidationFormInput)
