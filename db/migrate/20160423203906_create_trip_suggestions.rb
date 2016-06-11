@@ -7,7 +7,7 @@ class CreateTripSuggestions < ActiveRecord::Migration
       t.string :name, null: false
       t.string :title, null: false
       t.text :message, null: false
-      t.timestamps
+      t.timestamps, null: false
     end
 
     add_reference :trip_suggestions, :user, index: true, foreign_key: true

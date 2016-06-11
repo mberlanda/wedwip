@@ -4,6 +4,7 @@ require 'spec_helper'
 describe "Signup" do
   
   it "should not create users with invalid signup information" do
+    pending
 
     get new_user_session_path
     count_before = User.count
@@ -15,7 +16,8 @@ describe "Signup" do
   end
 
   it "should create users with valid signup information" do
-
+    pending
+    
     get new_user_session_path
     count_before = User.count
     post user_registration_path, user: {
