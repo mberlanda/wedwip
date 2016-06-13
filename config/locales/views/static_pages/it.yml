@@ -73,6 +73,9 @@ it:
     carsharing:
       title: Passaggi in Auto
       description: Non siete automuniti? Segnalateci il vostro bisogno. Potete dare un passaggio? Indicateci la vostra disponibilità.
+    cutlery:
+      title: Cibo
+      description: Segnalateci eventuali intolleranze alimentari e allergie specificando quale ospite ne è affetto.
   playlist:
     header:
       title: Musica
@@ -110,3 +113,17 @@ it:
     seneca: "\"Chi non vive per un'altra persona non vive neppure per se stesso\" Seneca"
     twain: "\"Da a ogni giornata la possibilità di essere la più bella della tua vita\" Mark Twain"
     wek: "\"Bisogna sempre puntare alla luna, mal che vada si è comunque arrivati in mezzo alle stelle\" Alek Wek"
+  contact:
+    header:
+      title: Contattaci
+      description: 'Per ogni comunicazione potete scriverci un messaggio di seguito oppure contattarci ai seguenti numeri di telefono:'
+    form:
+      message:
+        label: Messaggio
+        placeholder: Scrivete il messaggio qui
+        error: Prego scrivi qualcosa nel messaggio prima di inviarlo
+      phone_number:
+        label: Numero di telefono
+        placeholder: 'Numero di telefono: es. +39 000 00 00 000'
+      send: Invia
+    success: Messaggio Inviato
