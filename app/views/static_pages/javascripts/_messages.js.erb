@@ -1,1 +1,32 @@
-_messages.js.erb
+$("#contact-button").click(function(){
+
+  var contactMessage = {
+    phone_number: $("#contact-phone_number").val().trim(),
+    text: $("#contact-msg").val().trim()
+  }
+
+  if (contactMessage.text == "") {
+    alert('<%= t("contact.form.message.error") %>');
+    return;
+    }
+
+  createMessage(contactMessage);
+
+  })
+
+
+function createMessage(item){
+
+  var request = $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: '<%= messages_path %>',
+    dataType: 'json',
+    type: "POST",
+    quietMillis: 200,
+    data: { message_json: JSON.stringify(item)}
+    });
+
+  request.done(function(data){
+      alert('<%= t("contact.success") %>');
+  });
+}

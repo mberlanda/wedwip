@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :guests, only: [:create, :destroy]
+  resources :messages, only: [:create]
   resources :places, only: [:create]
  
   # The priority is based upon order of creation: first created -> highest priority.

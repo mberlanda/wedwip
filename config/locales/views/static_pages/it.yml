@@ -121,7 +121,9 @@ it:
       message:
         label: Messaggio
         placeholder: Scrivete il messaggio qui
+        error: Prego scrivi qualcosa nel messaggio prima di inviarlo
       phone_number:
         label: Numero di telefono
         placeholder: 'Numero di telefono: es. +39 000 00 00 000'
       send: Invia
+    success: Messaggio Inviato

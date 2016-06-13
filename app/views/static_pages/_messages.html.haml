@@ -17,7 +17,7 @@
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
               %label= t('contact.form.message.label')
-              %textarea#contact-text.form-control{"aria-invalid" => "false", :placeholder => "#{t('contact.form.message.placeholder')}", :required => "", :rows => "5"}
+              %textarea#contact-msg.form-control{"aria-invalid" => "false", :placeholder => "#{t('contact.form.message.placeholder')}", :required => "", :rows => "5"}
               %p.help-block.text-danger
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.controls
@@ -29,3 +29,7 @@
           %br
           .text-center
             = button_tag("#{t('contact.form.send')}", id: "contact-button", class: 'btn default')
+
+- provide :page_javascript do
+  %script
+    #{render(partial: 'static_pages/javascripts/messages.js', locals: { })}
