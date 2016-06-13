@@ -73,6 +73,9 @@ it:
     carsharing:
       title: Passaggi in Auto
       description: Non siete automuniti? Segnalateci il vostro bisogno. Potete dare un passaggio? Indicateci la vostra disponibilità.
+    cutlery:
+      title: Cibo
+      description: Segnalateci eventuali intolleranze alimentari e allergie specificando quale ospite ne è affetto.
   playlist:
     header:
       title: Musica
