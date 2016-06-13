@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603174741) do
+ActiveRecord::Schema.define(version: 20160613061655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20160603174741) do
   end
 
   add_index "guests", ["user_id"], name: "index_guests_on_user_id", using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "places", force: :cascade do |t|
     t.jsonb   "marker",  null: false
@@ -52,5 +61,6 @@ ActiveRecord::Schema.define(version: 20160603174741) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "guests", "users"
+  add_foreign_key "messages", "users"
   add_foreign_key "places", "users"
 end
