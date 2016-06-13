@@ -110,17 +110,15 @@ it:
     seneca: "\"Chi non vive per un'altra persona non vive neppure per se stesso\" Seneca"
     twain: "\"Da a ogni giornata la possibilità di essere la più bella della tua vita\" Mark Twain"
     wek: "\"Bisogna sempre puntare alla luna, mal che vada si è comunque arrivati in mezzo alle stelle\" Alek Wek"
-  messages:
+  contact:
     header:
       title: Contattaci
       description: 'Per ogni comunicazione potete scriverci un messaggio di seguito oppure contattarci ai seguenti numeri di telefono:'
-    phone_numbers:
-      mauro:
-      bea:
     form:
-      text:
+      message:
         label: Messaggio
-        placeholder: Scrivete qui
+        placeholder: Scrivete il messaggio qui
       phone_number:
         label: Numero di telefono
-        description: es. +39 000 00 00 000
+        placeholder: 'Numero di telefono: es. +39 000 00 00 000'
+      send: Invia
