@@ -18,7 +18,6 @@ it:
     map: Mappa
     header:
       title: Location
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, quae, laborum, voluptate delectus odio doloremque error porro obcaecati nemo animi ducimus quaerat nostrum? Ab molestiae eaque et atque architecto reiciendis.
     church:
       title: Cerimonia
       where:

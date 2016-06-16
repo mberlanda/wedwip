@@ -1,0 +1,14 @@
+it:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: Email cannot be blank
+              invalid: Invalid Email
+            password:
+              blank: Password cannot be blank
+              too_short: Password too short
+            password_confirmation:
+              confirmation: Password confirmation does not match with the password provided 
