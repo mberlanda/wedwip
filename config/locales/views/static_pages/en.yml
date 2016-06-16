@@ -78,7 +78,9 @@ en:
   playlist:
     header:
       title: Music
-      description: A great band will play during the party, however you can add your hits to the following Spotify collaborative playlist for the rest of the party.
+      description: A great band will play during the party, however you can click on the button and add it to your Spotify playlists to start sharing hits for the rest of the party. 
+    button:
+      go: Go to the Playlist
   gift:
     header:
       title: Wedding List

@@ -78,7 +78,9 @@ it:
   playlist:
     header:
       title: Musica
-      description: Una band suonerà durante il nostro ricevimento, ma potete suggerire qualche brano per il resto della serata.
+      description: Una band suonerà durante il nostro ricevimento, ma potete suggerire qualche brano per il resto della serata cliccando sul bottone qui sotto e aggiungendo seguendo la playlist.
+    button:
+      go: Apri la Playlist
   gift:
     header:
       title: Lista nozze
