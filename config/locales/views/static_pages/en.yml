@@ -4,3 +4,125 @@ en:
     quote: Are delighted to invite you to celebrate their marriage
     buttons:
       more: More
+  about:
+    header:
+      title: Our Wedding
+      description: Saturday, October 1st 2016.
+    participation:
+      title: Confirm your Participation
+      description: Find the details about the venues, confirm your participation and/or send us a message
+    gift:
+      title: Party and Wedding List
+      description: Suggest some song for the party, stop-overs for our honeymoon, upload pictures and make a gift
+  locations:
+    map: Map
+    header:
+      title: Location
+    church:
+      title: Ceremony
+      where:
+        title: Where
+        description: Basilica di Sant'Alessando in Colonna
+      when:
+        title: Hours
+        description: 4 p.m.
+      address:
+        title: Address
+        street: "Via Sant'Alessandro, 35"
+        city: 24122 Bergamo BG
+    restaurant:
+      title: Reception
+      where:
+        title: Where
+        description: Tenuta Serradesca di M. Acquaroli
+      when:
+        title: Hours
+        description: 6.30 p.m.
+      address:
+        title: Address
+        street: "Via Serradesca, 2"
+        city: 24020 Scanzorosciate BG
+  participation:
+    header:
+      title: Confirm your Participation
+      description: Confirm your participation below using the validation code provided in the invitation.
+    validation_form:
+      title: Confirmation Code
+      validation:
+        label: Confirmation Code
+        placeholder: Please type the Confirmation Code
+      check: Check
+    guest_form:
+      title: Guest Name
+      name: Name
+      surname: Surname
+      add: Confirm
+    invited_guests:
+      title: Confirmed Guests
+  faq:
+    header:
+      title: FAQ
+      description: Some useful information about our special day.
+    parking:
+      title: Parking
+      description: It's not possible to park the car in front of the Church. Please consider to park in the surroundings.
+    hospitality:
+      title: Sleeping
+      description: We will try to give some tips about where to stay as soon as possible.
+    carsharing:
+      title: Carsharing
+      description: You don't have a car? Tell us your need! Do you have some space in yours? Tell us your availability.
+    cutlery:
+      title: Food
+      description: Inform us about any food intolerance or allergy specifying which guest is affected.
+  playlist:
+    header:
+      title: Music
+      description: A great band will play during the party, however you can add your hits to the following Spotify collaborative playlist for the rest of the party.
+  gift:
+    header:
+      title: Wedding List
+      description: Help us to sustain this party, our honeymoon and our future projects. You can do it with an envelop, a bank transfer or Paypal.
+    iban:
+      title: IBAN
+      number: 12345678910
+  trip:
+    header:
+      title: Honeymoon
+      description: Suggest some stop-overs for our honeymoon.
+    body:
+      content: During the first two weeks of October we will travel around the Belpaese by car. Advise us about some special hotels, restaurant or places to not miss by searching them on the map below.
+  search_map:
+    header:
+      title: Place Name
+      description: Why would you suggest this place?
+    reason:
+      label: Reason
+      placeholder: Please provide a reason
+    button:
+      submit: Submit
+      cancel: Cancel
+  quotes: 
+    benigni: "\"Iniziare un nuovo cammino spaventa. Ma dopo ogni passo che percorriamo ci rendiamo conto di come era pericoloso rimanere fermi\" Roberto Benigni"
+    gaius: "Ubi tu Gaius, ibi ego Gaia"
+    gibran: "\"Una delle cose più belle nella vita, è trovare qualcuno che riesca a capirti, senza il bisogno di dare tante spiegazioni!\" Kahlil Gibran"
+    party: "Festa è partecipazione! Aiutateci a rendere ancora più speciale questo giorno unico della nostra vita e a costruire il nostro futuro."
+    roosevelt: "\"Il futuro appartiene a coloro che credono nella bellezza dei propri sogni\" Eleanor Roosevelt"
+    schopenhauer: "\"La vita e i sogni sono fogli di uno stesso libro: leggerli in ordine è vivere, sfogliarli a caso è sognare\" Arthur Schopenhauer"
+    seneca: "\"Chi non vive per un'altra persona non vive neppure per se stesso\" Seneca"
+    twain: "\"Da a ogni giornata la possibilità di essere la più bella della tua vita\" Mark Twain"
+    wek: "\"Bisogna sempre puntare alla luna, mal che vada si è comunque arrivati in mezzo alle stelle\" Alek Wek"
+  contact:
+    header:
+      title: Contacts
+      description: 'Leave us a message for any communication or call us at the following numbers:'
+    form:
+      message:
+        label: Message
+        placeholder: Write your message here
+        error: You have to write something in the message before to send it
+      phone_number:
+        label: Phone number
+        placeholder: 'Phone Number: es. +39 000 00 00 000'
+      send: Send
+    success: Message Sent
