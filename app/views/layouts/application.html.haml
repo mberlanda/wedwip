@@ -26,6 +26,8 @@
 
     = yield
 
+    = render partial: 'layouts/footer'
+
     = render partial: 'layouts/javascripts'
     -if content_for?(:page_javascript)
       =yield :page_javascript

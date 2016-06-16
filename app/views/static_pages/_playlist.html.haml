@@ -8,3 +8,6 @@
     .row.content-row
       .col-lg-12.text-center
         %iframe{:allowtransparency => "true", :frameborder => "0", :height => "380", :src => "https://embed.spotify.com/?uri=spotify%3Auser%3A21id7v7gckz7ucdb7awgxuhvy%3Aplaylist%3A1bIonqPoosQOFRnydh9QRc", :width => "380"}
+    .row.content-row
+      .col-lg-8.col-lg-offset-2.text-center
+        = link_to t('playlist.button.go'), "https://open.spotify.com/user/21id7v7gckz7ucdb7awgxuhvy/playlist/1bIonqPoosQOFRnydh9QRc", id: "playlist-button", class: 'btn btn-success'

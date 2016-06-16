@@ -27,3 +27,11 @@ function supplant(string, o){
 function encrypt(string){
   return hex_sha512( string.toLowerCase() ) ;
 }
+
+
+$('p#clock').
+  countdown('2016/10/01 16:00:00', function(event) {
+    $(this).text(
+      event.strftime('%D days %H:%M:%S')
+    );
+  });

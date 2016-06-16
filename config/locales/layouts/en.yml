@@ -14,3 +14,13 @@ en:
       choose: Choose Language
       ita: Italiano
       eng: English
+  footer:
+    clock:
+      title: Coming soon...
+      content: jscountdown
+    map:
+      title: Where
+      content: Bergamo, Italy
+    email:
+      title: Email
+      content: 'mauroebeatrice@gmail.com'
