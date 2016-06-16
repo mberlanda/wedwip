@@ -1,11 +1,32 @@
-%footer.footer
-  %small
-    The
-    %a{:href => "http://www.railstutorial.org/"} Ruby on Rails Tutorial
-    by
-    %a{:href => "http://www.michealhartl.com/"} Micheal Hartl
-  %nav
-    %ul
-      %li= link_to "About", "#"
-      %li= link_to "Contact", "#"
-      %li= link_to "News", "http://news.railstutorial.org/"
+%footer.footer{:style => "background-image: url('assets/img/fashion/bg-footer.jpg')"}
+  .container.text-center
+    .row
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-clock-o
+          = t('footer.clock.title')
+        %p#clock
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-map-marker
+          = t('footer.map.title')
+        %p
+          = t('footer.map.content')
+      .col-md-4.contact-details
+        %h4
+          %i.fa.fa-envelope
+          = t('footer.email.title')
+        %p
+          %a{:href => "mailto:#{t('footer.email.content')}"}= t('footer.email.content')
+    .row.social
+      .col-lg-12
+        %ul.list-inline
+          %li
+            %a{:href => "https://open.spotify.com/user/21id7v7gckz7ucdb7awgxuhvy/playlist/1bIonqPoosQOFRnydh9QRc"}
+              %i.fa.fa-spotify.fa-fw.fa-2x
+          %li
+            %a{:href => "https://github.com/mberlanda"}
+              %i.fa.fa-github.fa-fw.fa-2x
+    .row.copyright
+      .col-lg-12
+        %p.small © 2016 Mauro e Beatrice
