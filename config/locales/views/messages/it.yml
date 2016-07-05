@@ -1,0 +1,10 @@
+it:
+  message_table:
+    title: Lista Messaggi Ricevuti
+    description: Ecco la lista dei messaggi ricevuti
+    table:
+      headers:
+        email: Email
+        phone_number: Telefono
+        text: Testo
+        created_at: Data Creazione
