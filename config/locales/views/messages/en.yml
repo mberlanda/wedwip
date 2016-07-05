@@ -1,0 +1,10 @@
+en:
+  message_table:
+    title: Message List
+    description: The list of the messages received so far
+    table:
+      headers:
+        email: Email
+        phone_number: Phone Number
+        text: Text
+        created_at: Creation Date

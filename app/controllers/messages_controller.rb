@@ -2,6 +2,10 @@ class MessagesController < ApplicationController
   
   before_action :authenticate_user!
 
+  def index
+    @messages = Message.includes(:user).all
+  end
+
   def create
     
     begin
@@ -17,6 +21,7 @@ class MessagesController < ApplicationController
     end
 
   end
+
 
   def msg_params
     params.permit(:message_json)

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     root 'static_pages#home'
     resources :guests, only: [:index]
+    resources :messages, only: [:index]
     resources :places, only: [:index]
 
   end
