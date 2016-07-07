@@ -3,7 +3,12 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @messages = Message.includes(:user).all
+  end
+
+  def datatable_list
+    @response = Message.includes(:user).all
+    @data = @response.map{|m| MessageDecorator.new(m).format }
+    render_shared_search_json
   end
 
   def create
@@ -22,20 +27,16 @@ class MessagesController < ApplicationController
 
   end
 
-  def datatable_list
-    @response = Message.includes(:user).all
-    @data = @response.map{|m| MessageDecorator.new(m).format }
-    render_shared_search_json
-  end
+  private
 
-  def msg_params
-    params.permit(:message_json)
-  end
-
-  def render_shared_search_json
-    respond_to do |format|
-      format.json { render 'shared/search' }
+    def msg_params
+      params.permit(:message_json)
     end
-  end
+
+    def render_shared_search_json
+      respond_to do |format|
+        format.json { render 'shared/search' }
+      end
+    end
 
 end

@@ -3,7 +3,12 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @places = Place.includes(:user).all
+  end
+
+  def datatable_list
+    @response = Place.includes(:user).all
+    @data = @response.map{|p| PlaceDecorator.new(p).format }
+    render_shared_search_json
   end
 
   def create
@@ -25,13 +30,6 @@ class PlacesController < ApplicationController
     end
 
   end
-
-  def datatable_list
-    @response = Place.includes(:user).all
-    @data = @response.map{|p| PlaceDecorator.new(p).format }
-    render_shared_search_json
-  end
-
 
   private
 
