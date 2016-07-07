@@ -22,6 +22,12 @@ class MessagesController < ApplicationController
 
   end
 
+  def datatable_list
+    @response = Message.includes(:user).all
+    @data = @response.map{|m| MessageDecorator.new(m).format }
+    render_shared_search_json
+  end
+
   def msg_params
     params.permit(:message_json)
   end
