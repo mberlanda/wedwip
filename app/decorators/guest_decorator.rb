@@ -13,6 +13,6 @@ class GuestDecorator  < Draper::Decorator
   end
 
   def capitalize_each(string)
-    string.split.map(&:capitalize).join
+    string.split.map(&:capitalize).join(' ')
   end
 end
