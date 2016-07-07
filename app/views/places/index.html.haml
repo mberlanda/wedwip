@@ -1,5 +1,43 @@
-= render partial: 'header'
-= render partial: 'places_table'
-
 - provide :page_title do
   %title Mauro e Beatrice | Suggested Place List
+- provide :page_stylesheet do
+  = stylesheet_link_tag "css/dataTables.bootstrap.css"
+- provide :page_javascript do
+  = javascript_include_tag "js/jquery.dataTables.min.js"
+  = javascript_include_tag "js/dataTables.bootstrap.min.js"
+
+= render partial: 'header'
+
+%section#place_table.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2= t('place_table.title')
+        %hr.colored/
+        %p= t('place_table.description')
+    .row
+      %br/
+    .row
+      .table-responsive
+        %table.table.table-striped#places
+          %thead
+            %tr
+              %th= t('place_table.table.headers.address')
+              %th= t('place_table.table.headers.reason')
+              %th= t('place_table.table.headers.email')
+
+- provide :page_javascript do
+  = javascript_include_tag "js/jquery.dataTables.min.js"
+  = javascript_include_tag "js/dataTables.bootstrap.min.js"
+  :coffee
+    $("#places").DataTable
+      'language': I18n.t('datatables')
+      'processing': true
+      'pageLength': 50
+      'order': [[ 0, 'desc' ]]
+      'processing': true
+      'ordering': true
+      'dom': 'fl<"table-scrollable"t>irp'
+      'columnDefs': [ {targets: [], orderable: true}]
+      'ajax': '#{datatable_list_places_path}'
+

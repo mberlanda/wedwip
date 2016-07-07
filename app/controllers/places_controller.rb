@@ -26,8 +26,22 @@ class PlacesController < ApplicationController
 
   end
 
+  def datatable_list
+    @response = Place.includes(:user).all
+    @data = @response.map{|p| PlaceDecorator.new(p).format }
+    render_shared_search_json
+  end
+
+
+  private
 
   def marker_params
     params.permit(:marker, :reason, :address)
+  end
+
+  def render_shared_search_json
+    respond_to do |format|
+      format.json { render 'shared/search' }
+    end
   end
 end
