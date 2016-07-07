@@ -22,9 +22,14 @@ class MessagesController < ApplicationController
 
   end
 
-
   def msg_params
     params.permit(:message_json)
+  end
+
+  def render_shared_search_json
+    respond_to do |format|
+      format.json { render 'shared/search' }
+    end
   end
 
 end
