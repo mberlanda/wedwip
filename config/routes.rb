@@ -13,8 +13,18 @@ Rails.application.routes.draw do
 
   end
 
-  resources :guests, only: [:create, :destroy]
-  resources :messages, only: [:create]
+  resources :guests, only: [:create, :destroy] do
+    collection do
+      get :datatable_list
+    end
+  end
+
+  resources :messages, only: [:create] do
+    collection do
+      get :datatable_list
+    end
+  end
+  
   resources :places, only: [:create] do
     collection do
       get :datatable_list

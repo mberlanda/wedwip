@@ -1,5 +1,40 @@
-= render partial: 'header'
-= render partial: 'guest_table'
-
 - provide :page_title do
   %title Mauro e Beatrice | Guest List
+- provide :page_stylesheet do
+  = stylesheet_link_tag "css/dataTables.bootstrap.css"
+  
+= render partial: 'header'
+
+%section#guest_table.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2= t('guest_table.title')
+        %hr.colored/
+        %p= t('guest_table.description')
+    .row
+      %br/
+    .row
+      .table-responsive
+        %table.table.table-striped#guests
+          %thead
+            %tr
+              %th= t('guest_table.table.headers.name')
+              %th= t('guest_table.table.headers.surname')
+              %th= t('guest_table.table.headers.email')
+              %th= t('guest_table.table.headers.created_at')
+
+- provide :page_javascript do
+  = javascript_include_tag "js/jquery.dataTables.min.js"
+  = javascript_include_tag "js/dataTables.bootstrap.min.js"
+  :coffee
+    $("#guests").DataTable
+      'language': I18n.t('datatables')
+      'processing': true
+      'pageLength': 50
+      'order': [[ 0, 'desc' ]]
+      'processing': true
+      'ordering': true
+      'dom': 'fl<"table-scrollable"t>irp'
+      'columnDefs': [ {targets: [], orderable: true}]
+      'ajax': '#{datatable_list_guests_path}'
