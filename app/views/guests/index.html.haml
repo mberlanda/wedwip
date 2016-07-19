@@ -19,6 +19,7 @@
         %table.table.table-striped#guests
           %thead
             %tr
+              %th= t('guest_table.table.headers.id')
               %th= t('guest_table.table.headers.name')
               %th= t('guest_table.table.headers.surname')
               %th= t('guest_table.table.headers.email')
@@ -32,7 +33,7 @@
       'language': I18n.t('datatables')
       'processing': true
       'pageLength': 50
-      'order': [[ 0, 'asc' ]]
+      'order': [[ 1, 'asc' ]]
       'processing': true
       'ordering': true
       'dom': 'fl<"table-scrollable"t>irp'

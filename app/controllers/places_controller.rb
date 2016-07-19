@@ -1,14 +1,9 @@
 class PlacesController < ApplicationController
+  include DatatableList
 
   before_action :authenticate_user!
 
   def index
-  end
-
-  def datatable_list
-    @response = Place.includes(:user).all
-    @data = @response.map{|p| PlaceDecorator.new(p).format }
-    render_shared_search_json
   end
 
   def create
@@ -35,11 +30,5 @@ class PlacesController < ApplicationController
 
   def marker_params
     params.permit(:marker, :reason, :address)
-  end
-
-  def render_shared_search_json
-    respond_to do |format|
-      format.json { render 'shared/search' }
-    end
   end
 end

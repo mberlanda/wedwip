@@ -4,6 +4,7 @@ en:
     description: The list of the people who confirmed their participation so far
     table:
       headers:
+        id: Id
         name: Name
         surname: Surname
         email: Email
