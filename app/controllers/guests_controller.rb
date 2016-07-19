@@ -1,14 +1,9 @@
 class GuestsController < ApplicationController
-  
+  include DatatableList
+
   before_action :authenticate_user!
 
   def index
-  end
-
-  def datatable_list
-    @response = Guest.includes(:user).all
-    @data = @response.map{|g| GuestDecorator.new(g).format }
-    render_shared_search_json
   end
 
   def create
@@ -51,11 +46,5 @@ class GuestsController < ApplicationController
 
     def guest_params
       params.permit(:guest_json, :id)
-    end
-    
-    def render_shared_search_json
-      respond_to do |format|
-        format.json { render 'shared/search' }
-      end
     end
 end
