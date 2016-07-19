@@ -65,3 +65,34 @@ rails generate devise MODEL
 ```
 https://elements.heroku.com/addons/cloudmailin
 ```
+
+### Backup Heroku PostgreSQL database
+```bash
+# create a manual backup
+$ heroku pg:backups capture --app sushi
+
+# schedule a backup
+$ heroku pg:backups schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app sushi
+$ heroku pg:backups unschedule DATABASE_URL --app sushi
+$ heroku pg:backups schedules --app sushi
+
+# download a backup
+$ heroku pg:backups public-url b001 --app sushi
+$ heroku pg:backups public-url --app sushi | cat
+$ curl -o latest.dump `heroku pg:backups public-url`
+
+# checking backup status
+$ heroku pg:backups --app sushi
+$ heroku pg:backups info b017 --app sushi
+
+# restoring backups
+$ heroku pg:backups restore b101 DATABASE_URL --app sushi
+$ heroku pg:backups restore sushi-staging::b101 DATABASE_URL
+$ heroku pg:backups restore 'https://s3.amazonaws.com/me/items/mydb.dump' DB_URL -a sushi
+
+# deleting backups 
+$ heroku pg:backups delete b101 --app foo
+
+# importing backup to localhost
+$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -U [username] -d [dbname] wedwip_b001.dump 
+```
