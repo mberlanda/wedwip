@@ -5,6 +5,7 @@ class GuestDecorator  < Draper::Decorator
 
   def format
     [
+      object.id,
       capitalize_each(object.name),
       capitalize_each(object.surname),
       object.user.email,
