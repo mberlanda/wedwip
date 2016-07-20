@@ -1,0 +1,9 @@
+- if @success
+  %div
+    %span Test TODO
+
+- else
+  %div{ class: "alert alert-danger alert-dismissable" }
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#", :title => "close"} ×
+    %strong Attenzione!
+    Non risulta registrato nessun utente con l'email #{@email}
