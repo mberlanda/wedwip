@@ -1,8 +1,59 @@
-%h2 Forgot your password?
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-  .form-actions
-    = f.button :submit, "Send me reset password instructions"
-= render "devise/shared/links"
+%section#passwords.bg-gray
+  .container.wow.fadeIn
+    .row
+      .col-lg-12.text-center
+        %h2 Forgot your password?
+    .row.content-row#flash
+      .col-lg-8.col-lg-offset-2
+        = render partial: 'shared/flash_messages'
+    .row.content-row
+      .col-lg-8.col-lg-offset-2
+        = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = f.error_notification
+          .row.control-group
+            .form-group.col-xs-12.floating-label-form-group.co
+              = f.input :email, required: true, autofocus: true, placeholder: 'Email',input_html:{id: :email , class: "form-control"}
+              %p.help-block.text-danger
+          %br/
+          
+          .row
+            .form-group.col-xs-12
+              %span.btn.btn-outline-dark#check-email-btn Verifica
+    .row
+      .col-lg-8.col-lg-offset-2
+        #check-email-data
+
+- provide :page_javascript do
+  :javascript
+    $(document).ready(function() {
+      initEmailValidation();
+    })
+ 
+    function initEmailValidation(){
+      $('#check-email-btn').click(function(event){ 
+        checkEmail();
+      })
+    }
+
+    function checkEmail(){
+      var email = $('#email').val().trim().toLowerCase();
+
+      if (validateEmail(email)){
+        $.ajax({
+          url: '#{check_users_path}',
+          type: 'GET',
+          data: { email: email },
+          success: function(data) {
+            $("#check-email-data").html(data);
+          }
+        })
+      } else {
+        alert("L'email inserita non è valida");
+      }
+
+    }
+
+    function validateEmail(email) {
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
