@@ -2,10 +2,17 @@ Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|it/ do
 
-    devise_for :users, :skip => [:registrations]
-    as :user do
-      post 'user/create' => 'devise/registrations#create', :as => 'user_registration'            
-    end
+    devise_for :users, controllers: {
+      passwords: 'users/passw',
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
+    }, path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      password: 'secret',
+      registration: 'register'
+    }
+
     root 'static_pages#home'
     resources :guests, only: [:index]
     resources :messages, only: [:index]
