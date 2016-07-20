@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|it/ do
 
     devise_for :users, controllers: {
-      passwords: 'users/passw',
+      passwords: 'users/passwords',
       registrations: 'users/registrations',
       sessions: 'users/sessions'
     }, path_names: {
