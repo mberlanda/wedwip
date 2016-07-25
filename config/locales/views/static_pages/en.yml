@@ -87,7 +87,10 @@ en:
       description: Help us to sustain this party, our honeymoon and our future projects. You can do it with an envelop, a bank transfer or Paypal.
     iban:
       title: IBAN
-      number: 12345678910
+      number: IT77Q0316901600CC0011293392
+    bic:
+      title: BIC
+      number: INGDITM1XXX
   trip:
     header:
       title: Honeymoon
