@@ -87,7 +87,10 @@ it:
       description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrete farlo con una busta, un bonifico o Paypal.
     iban:
       title: IBAN
-      number: 12345678910
+      number: IT77Q0316901600CC0011293392
+    bic:
+      title: BIC
+      number: INGDITM1XXX
   trip:
     header:
       title: Viaggio di Nozze
