@@ -9,4 +9,7 @@ class UsersController < ApplicationController
 
     render :layout => false
   end
+
+  def update_password
+  end
 end

@@ -1,6 +1,40 @@
 - if @success
-  %div
-    %span Test TODO
+  %hr.colored/
+  .text-center
+    %p Inserisci una nuova password per #{@email}
+    
+  .row.content-row
+    = simple_form_for(:change) do |f|
+      .row.control-group
+        .form-group.col-xs-12.floating-label-form-group.controls
+          = f.input :password, required: true, label: t('register.form.password.label'), placeholder: t('register.form.password.placeholder'), input_html:{type: "password", class: "form-control"}
+          %p.help-block.text-danger
+          = f.input :password_confirmation, required: true, label: t('register.form.password_confirmation.label'), placeholder: t('register.form.password_confirmation.placeholder'), input_html:{type: "password", class: "form-control"}
+          %p.help-block.text-danger
+
+  .row
+    .form-group.col-xs-12
+      %span.btn.btn-outline-dark#change-password-btn Cambia Password
+          
+  :javascript
+
+    hideEmailInputs();
+
+    function hideEmailInputs(){
+      $('#password-flash').hide();
+      $('#password-request-form').hide();
+    }
+
+    function pswMinLen(password){
+      return (password.lenght > 7);
+    }
+
+    function pswConfirmationMatch(){
+      var psw = $("#change_password").val();
+      var psw_conf = $("#change_password_confirmation").val();
+
+      return (psw == psw_conf);
+    }
 
 - else
   %div{ class: "alert alert-danger alert-dismissable" }
