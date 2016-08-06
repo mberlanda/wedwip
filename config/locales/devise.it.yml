@@ -6,6 +6,10 @@
 
 it:
   devise:
+    actions:
+      login: "Accedi"
+      sign_up: "Registrati"
+      password_recovery: "Password dimenticata?"
     confirmations:
       confirmed: "Il tuo account è stato correttamente confermato."
       send_instructions: "Entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo account."
