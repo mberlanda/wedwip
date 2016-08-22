@@ -2,13 +2,13 @@
   .container.wow.fadeIn
     .row
       .col-lg-12.text-center
-        %h2 Forgot your password?
-    .row.content-row#flash
+        %h1= I18n.t("devise.actions.password_recovery")
+    .row.content-row#password-flash
       .col-lg-8.col-lg-offset-2
         = render partial: 'shared/flash_messages'
-    .row.content-row
+    .row.content-row#password-request-form
       .col-lg-8.col-lg-offset-2
-        = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = simple_form_for(:new_password, url: '/', method: :get) do |f|
           = f.error_notification
           .row.control-group
             .form-group.col-xs-12.floating-label-form-group.co
@@ -28,8 +28,13 @@
     $(document).ready(function() {
       initEmailValidation();
     })
- 
+
     function initEmailValidation(){
+      $('form.new_password').submit(function(event){
+        checkEmail();
+        event.preventDefault();
+      })
+
       $('#check-email-btn').click(function(event){ 
         checkEmail();
       })
