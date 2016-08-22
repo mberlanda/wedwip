@@ -18,5 +18,8 @@ class UsersController < ApplicationController
     u.password_confirmation = p[:password_confirmation]
     u.save!
 
-    flash[:success] = "Password cambiata con successo"     sign_in(u)
-redirect_to root_url   end end
+    flash[:success] = "Password cambiata con successo"
+    sign_in(u)
+    redirect_to root_url
+  end
+end
