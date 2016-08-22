@@ -4,13 +4,14 @@
     %p Inserisci una nuova password per #{@email}
     
   .row.content-row
-    = simple_form_for(:change) do |f|
+    = simple_form_for(:change, url: update_password_users_path, method: :post, id: "change-password") do |f|
       .row.control-group
         .form-group.col-xs-12.floating-label-form-group.controls
+          = f.input :email, as: :hidden
           = f.input :password, required: true, label: t('register.form.password.label'), placeholder: t('register.form.password.placeholder'), input_html:{type: "password", class: "form-control"}
-          %p.help-block.text-danger
+          %p.help-block.text-danger#password-input{style: "color:red;"}
           = f.input :password_confirmation, required: true, label: t('register.form.password_confirmation.label'), placeholder: t('register.form.password_confirmation.placeholder'), input_html:{type: "password", class: "form-control"}
-          %p.help-block.text-danger
+          %p.help-block.text-danger#password-confirmation-input{style: "color:red;"}
 
   .row
     .form-group.col-xs-12
@@ -20,13 +21,53 @@
 
     hideEmailInputs();
 
+    $('#change-password-btn').click(function(){
+      $('form.change').submit();
+    })
+
+    $('form.change').submit(function(event){
+      var psw = $('input#change_password').val().trim();
+      if ( pswMinLen(psw) ){
+        if ( pswConfirmationMatch() ){
+        } else {
+          $('input#change_password_confirmation').trigger('change');
+          event.preventDefault();
+        }
+      } else {
+        $('input#change_password').trigger('change');
+        event.preventDefault();
+      }
+    })
+
     function hideEmailInputs(){
+      var email = $('#email').val().trim().toLowerCase();
+      $('input#change_email').val(email);
       $('#password-flash').hide();
       $('#password-request-form').hide();
     }
 
+    $('input#change_password').change(function(){
+      $('#password-input').text('');
+      var psw = $(this).val().trim();
+
+      if ( pswMinLen(psw) ){
+        $('#password-input').text('');
+      } else {
+        $('#password-input').text('#{I18n.t("activerecord.errors.models.user.attributes.password.too_short")}');
+      }
+    })
+
+    $('input#change_password_confirmation').change(function(){
+      $('#password-confirmation-input').text('');
+      if ( pswConfirmationMatch() ){
+        $('#password-confirmation-input').text('');
+      } else {
+        $('#password-confirmation-input').text('#{I18n.t("activerecord.errors.models.user.attributes.password_confirmation.confirmation")}');
+      }
+    })
+
     function pswMinLen(password){
-      return (password.lenght > 7);
+      return (password.toString().length > 7);
     }
 
     function pswConfirmationMatch(){
