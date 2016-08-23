@@ -1,10 +1,11 @@
 %section.bg-gray#gift
-  .container.text-center.wow.fadeIn
+  .container.text-center.wow.fadeIn 
     .row
       .col-lg-12
         %h2= t('gift.header.title')
         %hr.colored
         %p= t('gift.header.description')
+
     .row
       .col-lg-12
         %h4= t('gift.iban.title')
@@ -14,3 +15,28 @@
         %hr.colored        
     .row
       = render partial:"donate_button"
+
+    .row.content-row
+      .col-lg-12
+        .progress
+          .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 1%;"}
+            0%
+      .col-lg-8.col-lg-offset-2.text-center
+        .col-md-4.wow.fadeIn{"data-wow-delay" => ".2s"}
+          %h4 Festa e Cerimonia
+          %p Fotografia e Album
+          %p Video e Montaggio
+          %p Band
+          %p (al resto ci pensano i genitori)
+        .col-md-4.wow.fadeIn{"data-wow-delay" => ".4s"}
+          %h4 Viaggio di Nozze
+          %p Pernottamenti
+          %p Ristoranti
+          %p Teatro, Concerti, Parchi Divertimento
+          %p (i vostri consigli saranno preziosi)
+        .col-md-4.wow.fadeIn{"data-wow-delay" => ".6s"}
+          %h4 Quotidianità
+          %p Cose per la casa
+          %p Cose per Giacomo
+          %p Cose per lo svago (vacanze,teatro, stadio etc.)
+          %p (per far fronte ad ogni evenienza)
