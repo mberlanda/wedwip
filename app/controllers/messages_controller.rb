@@ -27,4 +27,5 @@ class MessagesController < ApplicationController
     def msg_params
       params.permit(:message_json)
     end
+
 end
