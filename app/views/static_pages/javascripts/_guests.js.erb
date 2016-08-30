@@ -1,11 +1,12 @@
 var guestList = <%= @guests.to_json.html_safe %>;
-var validationKey = "e0d67e387659dc93136877f61d49bc33ad5568d03b2a4b887d2e81403c26bc0ea11677b2296d09629a1b3527a90dca4e4b235f882e3327e9c9e1db9815549cbc";
+// var validationKey = "e0d67e387659dc93136877f61d49bc33ad5568d03b2a4b887d2e81403c26bc0ea11677b2296d09629a1b3527a90dca4e4b235f882e3327e9c9e1db9815549cbc";
 
 $(document).ready(function() {
-  $("#participation-form").hide();
+  // $("#participation-form").hide();
+  renderGuestsTable();
 });
 
-
+/*
 $("#check-code").click(function(){
 
   var validationCode = encrypt( $("#guest_validation").val().trim() );
@@ -73,14 +74,14 @@ function createGuest(item){
       renderGuestsTable();
   });
 }
-
+*/
 
 function renderGuestsTable() {
   var template = $.templates("#added-guests-template");
   var htmlGuestList = template.render(guestList);
   $("#added-guests-container").html(htmlGuestList);  
 }
-
+/*
 function removeGuest(id_to_delete) {
   var request = $.ajax({
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -97,3 +98,4 @@ function removeGuest(id_to_delete) {
     renderGuestsTable();
   });
 }
+*/

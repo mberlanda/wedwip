@@ -4,58 +4,67 @@
       .col-lg-12.text-center
         %h2= t('participation.header.title')
         %hr.colored/
-        %p= t('participation.header.description')
-
-    .row.content-row#validation-form
+        %p= t('participation.header.description_final')
+    .row.content-row
       .col-lg-8.col-lg-offset-2
-        %span= t('participation.validation_form.title')
-        .row.control-group
-          .form-group.col-xs-12.floating-label-form-group.controls
-            %label= t('participation.validation_form.validation.label')
-            %input#guest_validation.form-control{:placeholder => t('participation.validation_form.validation.placeholder'), :type => "text"}/
-            %p.help-block.text-danger
-        .form-action
-          .row
-            %br
-            .col-md-offset-3.col-md-12
-              = button_tag("#{t('participation.validation_form.check')}", id: "check-code", class: 'btn default')
-        %p#error-validation.block{style:"color:red;"}        
-
-    .row.content-row#participation-form
-      .col-lg-8.col-lg-offset-2
-        %span= t('participation.guest_form.title')
-        %form#guestForm{:name => "guestForm", :novalidate => ""}
-          .row.control-group
-            .form-group.col-xs-12.floating-label-form-group.controls
-              %label= t('participation.guest_form.name')
-              %input#guest_name.form-control{:placeholder => "#{t('participation.guest_form.name')}", :type => "text"}/
-              %p.help-block.text-danger
-          .row.control-group
-            .form-group.col-xs-12.floating-label-form-group.controls
-              %label= t('participation.guest_form.surname')
-              %input#guest_surname.form-control{:placeholder => "#{t('participation.guest_form.surname')}", :type => "text"}/
-              %p.help-block.text-danger
-
-        .form-action
-          .row
-            %br
-            .col-md-offset-3.col-md-12
-              = button_tag("#{t('participation.guest_form.add')}", id: "add-guest", class: 'btn default')
-
-        %h4.block= t('participation.invited_guests.title')
-        %p#error-input.block{style:"color:red;"}
-        %p#success-input.block{style:"color:green;"}
-
         %table.table
           %tbody#added-guests-container
 
-        %script#added-guests-template{type: 'text/x-jsrender'}
-          %tr
-            %td {{:name}}
-            %td {{:surname}}
-            %td 
-              %a.btn.btn-icon-only.default{href: "javascript:removeGuest({{:id}});"}
-                %i.fa.fa-times
+    %script#added-guests-template{type: 'text/x-jsrender'}
+      %tr
+        %td {{:name}}
+        %td {{:surname}}
+
+    -# .row.content-row#validation-form
+    -#   .col-lg-8.col-lg-offset-2
+    -#     %span= t('participation.validation_form.title')
+    -#     .row.control-group
+    -#       .form-group.col-xs-12.floating-label-form-group.controls
+    -#         %label= t('participation.validation_form.validation.label')
+    -#         %input#guest_validation.form-control{:placeholder => t('participation.validation_form.validation.placeholder'), :type => "text"}/
+    -#         %p.help-block.text-danger
+    -#     .form-action
+    -#       .row
+    -#         %br
+    -#         .col-md-offset-3.col-md-12
+    -#           = button_tag("#{t('participation.validation_form.check')}", id: "check-code", class: 'btn default')
+    -#     %p#error-validation.block{style:"color:red;"}        
+
+    -# .row.content-row#participation-form
+    -#   .col-lg-8.col-lg-offset-2
+    -#     %span= t('participation.guest_form.title')
+    -#     %form#guestForm{:name => "guestForm", :novalidate => ""}
+    -#       .row.control-group
+    -#         .form-group.col-xs-12.floating-label-form-group.controls
+    -#           %label= t('participation.guest_form.name')
+    -#           %input#guest_name.form-control{:placeholder => "#{t('participation.guest_form.name')}", :type => "text"}/
+    -#           %p.help-block.text-danger
+    -#       .row.control-group
+    -#         .form-group.col-xs-12.floating-label-form-group.controls
+    -#           %label= t('participation.guest_form.surname')
+    -#           %input#guest_surname.form-control{:placeholder => "#{t('participation.guest_form.surname')}", :type => "text"}/
+    -#           %p.help-block.text-danger
+
+    -#     .form-action
+    -#       .row
+    -#         %br
+    -#         .col-md-offset-3.col-md-12
+    -#           = button_tag("#{t('participation.guest_form.add')}", id: "add-guest", class: 'btn default')
+
+    -#     %h4.block= t('participation.invited_guests.title')
+    -#     %p#error-input.block{style:"color:red;"}
+    -#     %p#success-input.block{style:"color:green;"}
+
+    -#     %table.table
+    -#       %tbody#added-guests-container
+
+    -#     %script#added-guests-template{type: 'text/x-jsrender'}
+    -#       %tr
+    -#         %td {{:name}}
+    -#         %td {{:surname}}
+    -#         %td 
+    -#           %a.btn.btn-icon-only.default{href: "javascript:removeGuest({{:id}});"}
+    -#             %i.fa.fa-times
 
 
 - provide :page_javascript do

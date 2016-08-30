@@ -46,6 +46,7 @@ en:
     header:
       title: Confirm your Participation
       description: Confirm your participation below using the validation code provided in the invitation.
+      description_final: Please find below the list of the guest you have confirmed.
     validation_form:
       title: Confirmation Code
       validation:
@@ -68,7 +69,7 @@ en:
       description: It's not possible to park the car in front of the Church. Please consider to park in the surroundings.
     hospitality:
       title: Sleeping
-      description: We will try to give some tips about where to stay as soon as possible.
+      description: If you need an accommodation for the night of the wedding, contact us. We negotiated some good deals.
     carsharing:
       title: Carsharing
       description: You don't have a car? Tell us your need! Do you have some space in yours? Tell us your availability.
