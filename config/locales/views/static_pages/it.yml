@@ -46,6 +46,7 @@ it:
     header:
       title: Conferma Presenza
       description: Confermate di seguito la vostra presenza inserendo il codice fornitovi nell'invito.
+      description_final: Ecco di seguito la lista degli ospiti confermati entro la data di scadenza.
     validation_form:
       title: Codice di Conferma Presenza
       validation:
@@ -65,10 +66,10 @@ it:
       description: Alcune indicazioni utili sulla giornata.
     parking:
       title: Parcheggio
-      description: In prossimità della Chiesa non sarà possibile parcheggiare. Potete fare riferimento ai seguenti parcheggi nei dintorni.
+      description: In prossimità della Chiesa non sarà possibile parcheggiare. Troverete diversi parcheggi nei dintorni.
     hospitality:
       title: Alloggio
-      description: Quanto prima cercheremo di dare indicazioni su dove allogiare a buon prezzo.
+      description: Se desiderate una sistemazione per la notte del matrimonio, contattateci. Abbiamo negoziato una tariffa speciale.
     carsharing:
       title: Passaggi in Auto
       description: Non siete automuniti? Segnalateci il vostro bisogno. Potete dare un passaggio? Indicateci la vostra disponibilità.
