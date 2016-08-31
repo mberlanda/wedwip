@@ -85,7 +85,7 @@ en:
   gift:
     header:
       title: Wedding List
-      description: Help us to sustain this party, our honeymoon and our future projects. You can do it with an envelop, a bank transfer or Paypal.
+      description: Help us to sustain this party, our honeymoon and our future projects. You can do it with an envelop or a bank transfer (Paypal was disabled due to insane fees).
     iban:
       title: IBAN
       number: IT77Q0316901600CC0011293392
