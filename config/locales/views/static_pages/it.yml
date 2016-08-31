@@ -85,7 +85,7 @@ it:
   gift:
     header:
       title: Lista nozze
-      description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrete farlo con una busta, un bonifico o Paypal.
+      description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrete farlo con una busta o un bonifico (Paypal è stato disabilitato causa commissioni esorbitanti).
     iban:
       title: IBAN
       number: IT77Q0316901600CC0011293392
