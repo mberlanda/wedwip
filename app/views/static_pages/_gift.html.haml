@@ -8,9 +8,11 @@
 
     .row
       .col-lg-12
-        %h4= t('gift.iban.title')
+        %h5= t('gift.iban.recipient')
+        %h4= t('gift.iban.description')      
+        %h5= t('gift.iban.title')
         %h4= t('gift.iban.number')
-        %h4= t('gift.bic.title')
+        %h5= t('gift.bic.title')
         %h4= t('gift.bic.number')
         %hr.colored        
     .row
@@ -19,8 +21,8 @@
     .row.content-row
       .col-lg-12
         .progress
-          .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", :role => "progressbar", :style => "width: 1%;"}
-            0%
+          .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "11", :role => "progressbar", :style => "width: 11%;"}
+            11%
       .col-lg-8.col-lg-offset-2.text-center
         .col-md-4.wow.fadeIn{"data-wow-delay" => ".2s"}
           %h4 Festa e Cerimonia
