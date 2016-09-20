@@ -87,6 +87,8 @@ it:
       title: Lista nozze
       description: Aiutateci a sostenere questa festa, il nostro viaggio di nozze ed i nostri progetti futuri. Potrete farlo con una busta o un bonifico (Paypal è stato disabilitato causa commissioni esorbitanti).
     iban:
+      recipient: Intestatari
+      description: Mauro e Beatrice Berlanda
       title: IBAN
       number: IT77Q0316901600CC0011293392
     bic:
