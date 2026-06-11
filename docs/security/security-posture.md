@@ -59,6 +59,7 @@ unauditable moving target at install time.
 | `secret_key_base` for development & test committed | `config/secrets.yml` | Medium | 128-hex-char keys in git history. Production correctly reads `ENV["SECRET_KEY_BASE"]`. If these keys were ever reused in production, session cookies could be forged (Rails 4.2 cookie sessions allow marshal deserialization → RCE). |
 | **Real personal IBAN + BIC** | `config/locales/views/static_pages/{it,en}.yml` (`gift.iban.number`, `gift.bic.number`) | Medium (privacy/fraud) | Bank account details of the couple, also rendered on the page. |
 | Personal phone numbers | `app/views/static_pages/_messages.html.haml` (hardcoded) | Low/Medium (privacy) | Two personal mobile numbers. |
+| Google Maps API key committed | `app/views/static_pages/maps/_church.html.haml`, `_restaurant.html.haml` (`key=AIzaSy…`) | Medium | Embed API keys are client-visible by design, but this one has been in a public repo for 10 years with unknown restrictions. Should be deleted/rotated in the Google Cloud console. The static reproduction uses keyless map embeds instead. |
 | Personal email | `config/locales/layouts/{it,en}.yml` | Low | Contact mailbox. |
 | Guest PII by design | PostgreSQL (`guests`, `messages`, `places`) | n/a | Names, phone numbers, free-text messages of wedding guests. Not in the repo; the Heroku database should be confirmed deleted. |
 

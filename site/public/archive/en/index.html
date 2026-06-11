@@ -1,0 +1,523 @@
+<!doctype html>
+<!--
+  Static reproduction (2026) of the original 2016 wedding website (English
+  locale), translated 1:1 from the Rails/Haml views. Personal data (IBAN,
+  BIC, phone numbers) redacted; Google Analytics and Google Maps API
+  removed; forms are inert (there is no backend anymore).
+  See docs/architecture/original-page-structure.md in the repository.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Mauro e Beatrice — static reproduction of the 2016 wedding website" />
+    <meta name="robots" content="noindex" />
+    <title>Mauro e Beatrice | Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css" />
+    <!-- Font Awesome (self-hosted) -->
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
+    <!-- Default + Vintage Style Fonts (HTTPS, the original loaded them over http://) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,500,700,800,900" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sanchez:400italic,400" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo:400,400italic,700" />
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../css/plugins/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="../css/plugins/owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" href="../css/plugins/owl-carousel/owl.transitions.css" />
+    <link rel="stylesheet" href="../css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="../css/plugins/background.css" />
+    <link rel="stylesheet" href="../css/plugins/animate.css" />
+    <!-- Vitality Theme CSS -->
+    <link rel="stylesheet" href="../css/vitality-yellow.css" />
+    <link rel="stylesheet" href="../css/application.css" />
+    <!-- 2026 reproduction additions -->
+    <link rel="stylesheet" href="../css/archive.css" />
+  </head>
+
+  <!-- Alternate Body Classes: .modern and .vintage -->
+  <body class="vintage" id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-expanded">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll" href="#page-top">
+            <img class="img-responsive" alt="" src="../img/fashion/logo.png" />
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden"><a class="page-scroll" href="#page-top"></a></li>
+            <li><a href="../">Italiano</a></li>
+            <li><a class="page-scroll" href="#about">About</a></li>
+            <li><a class="page-scroll" href="#locations">Locations</a></li>
+            <li><a class="page-scroll" href="#participations">Participation</a></li>
+            <li><a class="page-scroll" href="#faq">FAQ</a></li>
+            <li><a class="page-scroll" href="#playlist">Music</a></li>
+            <li><a class="page-scroll" href="#trip">Honeymoon</a></li>
+            <li><a class="page-scroll" href="#gift">Wedding List</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header style="background-image: url('../img/castle.jpg')">
+      <aside class="header-quote">
+        <div class="container wow fadeIn">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <span class="quote"><span class="text-primary">Mauro e Beatrice</span></span>
+              <hr class="colored" />
+              <span class="quote">Are delighted to invite you to celebrate their marriage</span>
+              <br />
+              <br />
+              <a class="btn btn-outline-light page-scroll" href="#about">More</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="scroll-down">
+        <a class="btn page-scroll" href="#about"><i class="fa fa-angle-down fa-fw"></i></a>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-lg-12 wow fadeIn">
+            <h1>Our Wedding</h1>
+            <hr class="colored" />
+            <h4>Saturday, October 1st 2016.</h4>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-6 col-sm-6">
+            <div class="about-content wow fadeIn" data-wow-delay=".2s">
+              <a href="#participations"><i class="fa fa-edit fa-4x"></i></a>
+              <h3>Confirm your Participation</h3>
+              <p>Find the details about the venues, confirm your participation and/or send us a message</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="about-content wow fadeIn" data-wow-delay=".4s">
+              <a href="#gift"><i class="fa fa-gift fa-4x"></i></a>
+              <h3>Party and Wedding List</h3>
+              <p>Suggest some song for the party, stop-overs for our honeymoon, upload pictures and make a gift</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="pricing" id="locations" style="background-image: url('../img/chiesa.jpg')">
+      <div class="container wow fadeIn">
+        <div class="row text-center">
+          <div class="col-lg-12">
+            <h2>Location</h2>
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-md-6 col-sm-6">
+            <div class="pricing-item">
+              <h3>Ceremony</h3>
+              <hr class="colored" />
+              <ul class="list-group">
+                <li class="list-group-item"><em>Where</em><br />Basilica di Sant'Alessando in Colonna</li>
+                <li class="list-group-item"><em>Hours</em><br />4 p.m.</li>
+                <li class="list-group-item"><em>Address</em><br />Via Sant'Alessandro, 35<br />24122 Bergamo BG</li>
+                <li class="list-group-item"><a class="btn btn-outline-dark" data-toggle="modal" href="#churchMap">Map</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="pricing-item">
+              <h3>Reception</h3>
+              <hr class="colored" />
+              <ul class="list-group">
+                <li class="list-group-item"><em>Where</em><br />Tenuta Serradesca di M. Acquaroli</li>
+                <li class="list-group-item"><em>Hours</em><br />6.30 p.m.</li>
+                <li class="list-group-item"><em>Address</em><br />Via Serradesca, 2<br />24020 Scanzorosciate BG</li>
+                <li class="list-group-item"><a class="btn btn-outline-dark" data-toggle="modal" href="#restaurantMap">Map</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Participations (RSVP — closed in 2016) -->
+    <section id="participations" class="bg-gray">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Confirm your Participation</h2>
+            <hr class="colored" />
+            <p>Please find below the list of the guest you have confirmed.</p>
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <p class="archive-redacted">
+              The list of confirmed guests is not part of this static reproduction: guests' personal data is not
+              republished.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote -->
+    <aside class="cta-quote" style="background-image: url('../img/proposta.jpg')">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <span class="quote"
+              >"La vita e i sogni sono fogli di uno stesso libro: leggerli in ordine è vivere, sfogliarli a caso è
+              sognare" Arthur Schopenhauer</span
+            >
+            <hr class="colored" />
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FAQ -->
+    <section id="faq" class="bg-gray">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-lg-12 wow fadeIn">
+            <h1>FAQ</h1>
+            <hr class="colored" />
+            <p>Some useful information about our special day.</p>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-3 col-sm-3" id="parking">
+            <div class="about-content wow fadeIn" data-wow-delay=".2s">
+              <i class="fa fa-car fa-4x"></i>
+              <h3>Parking</h3>
+              <p>It's not possible to park the car in front of the Church. Please consider to park in the surroundings.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3" id="carsharing">
+            <div class="about-content wow fadeIn" data-wow-delay=".4s">
+              <i class="fa fa-taxi fa-4x"></i>
+              <h3>Carsharing</h3>
+              <p>You don't have a car? Tell us your need! Do you have some space in yours? Tell us your availability.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3" id="hospitality">
+            <div class="about-content wow fadeIn" data-wow-delay=".6s">
+              <i class="fa fa-bed fa-4x"></i>
+              <h3>Sleeping</h3>
+              <p>If you need an accommodation for the night of the wedding, contact us. We negotiated some good deals.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3" id="cutlery">
+            <div class="about-content wow fadeIn" data-wow-delay=".8s">
+              <i class="fa fa-cutlery fa-4x"></i>
+              <h3>Food</h3>
+              <p>Inform us about any food intolerance or allergy specifying which guest is affected.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact (form inert: no backend; phone numbers redacted) -->
+    <section id="message" class="bg-gray">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Contacts</h2>
+            <hr class="colored" />
+            <p>Leave us a message for any communication or call us at the following numbers:</p>
+          </div>
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <h4>Mauro e Beatrice</h4>
+            <p class="archive-redacted">(phone numbers removed from this reproduction)</p>
+            <hr class="colored" />
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <form id="contactForm" name="contactForm" novalidate>
+              <fieldset disabled>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Message</label>
+                    <textarea id="contact-msg" class="form-control" rows="5" placeholder="Write your message here"></textarea>
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="row control-group">
+                  <div class="form-group col-xs-12 floating-label-form-group controls">
+                    <label>Phone number</label>
+                    <input id="contact-phone_number" class="form-control" type="text" placeholder="Phone Number: es. +39 000 00 00 000" />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+            <div class="row">
+              <br />
+              <div class="text-center">
+                <button id="contact-button" class="btn default" disabled>Send</button>
+                <p class="archive-redacted"><small>The form is no longer active: this is a static reproduction.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="cta-quote" style="background-image: url('../img/shuttle.jpg')"></aside>
+
+    <!-- Playlist -->
+    <section id="playlist" class="bg-gray">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2>Music</h2>
+            <hr class="colored" />
+            <p>
+              A great band will play during the party, however you can click on the button and add it to your Spotify
+              playlists to start sharing hits for the rest of the party.
+            </p>
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-12 text-center">
+            <iframe
+              title="Spotify playlist"
+              src="https://open.spotify.com/embed/playlist/1bIonqPoosQOFRnydh9QRc"
+              width="380"
+              height="380"
+              frameborder="0"
+              allowtransparency="true"
+            ></iframe>
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <a id="playlist-button" class="btn btn-success" href="https://open.spotify.com/playlist/1bIonqPoosQOFRnydh9QRc">Go to the Playlist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="cta-quote" style="background-image: url('../img/menu.jpg')"></aside>
+
+    <!-- Honeymoon -->
+    <section class="bg-gray testimonials" id="trip">
+      <div class="container text-center wow fadeIn">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Honeymoon</h2>
+            <hr class="colored" />
+            <h4>Suggest some stop-overs for our honeymoon.</h4>
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-12">
+            <p>
+              During the first two weeks of October we will travel around the Belpaese by car. Advise us about some
+              special hotels, restaurant or places to not miss by searching them on the map below.
+            </p>
+            <p class="archive-redacted">
+              (The interactive suggestions map, based on the Google Maps API, is not part of this static reproduction.)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gift (IBAN/BIC redacted) -->
+    <section class="bg-gray" id="gift">
+      <div class="container text-center wow fadeIn">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>Wedding List</h2>
+            <hr class="colored" />
+            <p>
+              Help us to sustain this party, our honeymoon and our future projects. You can do it with an envelop or a
+              bank transfer (Paypal was disabled due to insane fees).
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h5>Recipient</h5>
+            <h4>Mauro e Beatrice Berlanda</h4>
+            <h5>IBAN</h5>
+            <h4 class="archive-redacted">IT•• •••• •••• •••• (removed from this reproduction)</h4>
+            <h5>BIC</h5>
+            <h4 class="archive-redacted">•••••••• (removed from this reproduction)</h4>
+            <hr class="colored" />
+          </div>
+        </div>
+        <div class="row content-row">
+          <div class="col-lg-12">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100" style="width: 11%">11%</div>
+            </div>
+          </div>
+          <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".2s">
+              <h4>Festa e Cerimonia</h4>
+              <p>Fotografia e Album</p>
+              <p>Video e Montaggio</p>
+              <p>Band</p>
+              <p>(al resto ci pensano i genitori)</p>
+            </div>
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".4s">
+              <h4>Viaggio di Nozze</h4>
+              <p>Pernottamenti</p>
+              <p>Ristoranti</p>
+              <p>Teatro, Concerti, Parchi Divertimento</p>
+              <p>(i vostri consigli saranno preziosi)</p>
+            </div>
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".6s">
+              <h4>Quotidianità</h4>
+              <p>Cose per la casa</p>
+              <p>Cose per Giacomo</p>
+              <p>Cose per lo svago (vacanze,teatro, stadio etc.)</p>
+              <p>(per far fronte ad ogni evenienza)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Church Modal -->
+    <div id="churchMap" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr"><div class="rl"></div></div>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="embed-container">
+                  <iframe
+                    title="Church map"
+                    src="https://maps.google.com/maps?q=Basilica+di+Sant%27Alessandro+in+Colonna+Bergamo&z=15&output=embed"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Restaurant Modal -->
+    <div id="restaurantMap" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr"><div class="rl"></div></div>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="embed-container">
+                  <iframe
+                    title="Restaurant map"
+                    src="https://maps.google.com/maps?q=Tenuta+Serradesca+Scanzorosciate&z=15&output=embed"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-default" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: black">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-4 contact-details">
+            <h4><i class="fa fa-clock-o"></i> Coming soon...</h4>
+            <p id="clock"></p>
+          </div>
+          <div class="col-md-4 contact-details">
+            <h4><i class="fa fa-map-marker"></i> Where</h4>
+            <p>Bergamo, Italy</p>
+          </div>
+          <div class="col-md-4 contact-details">
+            <h4><i class="fa fa-envelope"></i> Email</h4>
+            <p><a href="mailto:mauroebeatrice@gmail.com">mauroebeatrice@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="row social">
+          <div class="col-lg-12">
+            <ul class="list-inline">
+              <li>
+                <a href="https://open.spotify.com/playlist/1bIonqPoosQOFRnydh9QRc"><i class="fa fa-spotify fa-fw fa-2x"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/mberlanda"><i class="fa fa-github fa-fw fa-2x"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row copyright">
+          <div class="col-lg-12">
+            <p class="small">© 2016 Mauro e Beatrice</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Archive banner (2026 addition) -->
+    <div class="archive-banner">
+      Static reproduction of the original 2016 wedding website — personal data redacted.
+      <a href="../../">← Back to the 10th anniversary site</a>
+    </div>
+
+    <!-- Retina.js - Load first for faster HQ mobile images. -->
+    <script src="../js/plugins/retina/retina.js"></script>
+    <!-- Core Scripts -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap/bootstrap.js"></script>
+    <!-- Plugin Scripts -->
+    <script src="../js/plugins/jquery.easing.min.js"></script>
+    <script src="../js/plugins/classie.js"></script>
+    <script src="../js/plugins/cbpAnimatedHeader.js"></script>
+    <script src="../js/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="../js/plugins/jquery.magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="../js/plugins/background/core.js"></script>
+    <script src="../js/plugins/background/transition.js"></script>
+    <script src="../js/plugins/background/background.js"></script>
+    <script src="../js/plugins/jquery.mixitup.js"></script>
+    <script src="../js/plugins/wow/wow.js"></script>
+    <!-- Vitality Theme Scripts -->
+    <script src="../js/vitality.js"></script>
+    <!-- 2026 reproduction additions (footer clock) -->
+    <script src="../js/archive.js"></script>
+  </body>
+</html>
