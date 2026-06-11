@@ -5,16 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Mauro e Beatrice — 10 anni di matrimonio"
+      content="Mauro e Beatrice — dieci anni di matrimonio, 1 ottobre 2016 – 1 ottobre 2026"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'self'"
     />
     <title>Mauro e Beatrice | 10 anni</title>
     <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <main id="app">
-      <h1>Mauro e Beatrice</h1>
-      <p>1 ottobre 2016 — 1 ottobre 2026</p>
-      <p><em>Il sito per il decimo anniversario è in costruzione.</em></p>
+    <main class="hero">
+      <p class="eyebrow">1 ottobre 2016 — 1 ottobre 2026</p>
+      <h1>Mauro <span class="amp">&amp;</span> Beatrice</h1>
+      <p class="tagline">Dieci anni dopo quel "sì" a Bergamo.</p>
+
+      <section class="counter" aria-label="Tempo insieme">
+        <div class="counter-item">
+          <span data-counter="years">–</span><small>anni</small>
+        </div>
+        <div class="counter-item">
+          <span data-counter="days">–</span><small>giorni</small>
+        </div>
+        <div class="counter-item">
+          <span data-counter="hours">–</span><small>ore</small>
+        </div>
+        <div class="counter-item">
+          <span data-counter="minutes">–</span><small>minuti</small>
+        </div>
+      </section>
+      <p class="anniversary-note" data-anniversary hidden></p>
     </main>
+
+    <section class="archive-nav">
+      <h2>Il sito originale del 2016</h2>
+      <p>
+        Il sito con cui annunciammo il matrimonio è stato conservato così
+        com'era: stesso tema, stesse immagini, stessi testi (con i dati
+        personali rimossi).
+      </p>
+      <nav class="archive-links">
+        <a class="card" href="archive/">
+          <strong>Visita l'archivio</strong>
+          <span>Versione italiana</span>
+        </a>
+        <a class="card" href="archive/en/">
+          <strong>Visit the archive</strong>
+          <span>English version</span>
+        </a>
+      </nav>
+    </section>
+
+    <footer>
+      <p>
+        © 2016–2026 Mauro e Beatrice ·
+        <a href="https://github.com/mberlanda/wedwip"
+          >github.com/mberlanda/wedwip</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
