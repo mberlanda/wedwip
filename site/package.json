@@ -1,0 +1,26 @@
+{
+  "name": "wedwip-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for Mauro & Beatrice's 10th wedding anniversary, with an archive of the original 2016 site",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.19.21",
+    "eslint": "^10.4.1",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0",
+    "vite": "^8.0.16"
+  }
+}
