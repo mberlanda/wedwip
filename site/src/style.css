@@ -1,0 +1,10 @@
+:root {
+  font-family: system-ui, sans-serif;
+}
+
+#app {
+  max-width: 40rem;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
