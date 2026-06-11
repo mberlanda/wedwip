@@ -11,8 +11,10 @@ Documentation for the 10th-anniversary overhaul of the 2016 wedding website.
 
 ## Security
 
-- Security posture assessment and remediation plan: see `security/` (added in the
-  security assessment PR).
+- [Security posture assessment](security/security-posture.md) — EOL stack, the 139
+  Dependabot alerts, committed secrets, personal data exposure, application weaknesses.
+- [Remediation plan](security/remediation-plan.md) — retire the Rails app, replace with
+  a static site; actions, residual risks, verification.
 
 ## Specs
 
