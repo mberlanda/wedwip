@@ -1,0 +1,40 @@
+/*
+ * Styles added for the 2026 static reproduction — NOT part of the original theme.
+ * The .embed-container rules were inline CSS in the original map-modals partial.
+ */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.archive-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  background: rgba(34, 34, 34, 0.95);
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 13px;
+  text-align: center;
+}
+.archive-banner a {
+  color: #fff;
+  text-decoration: underline;
+}
+.archive-redacted {
+  opacity: 0.7;
+  font-style: italic;
+}
